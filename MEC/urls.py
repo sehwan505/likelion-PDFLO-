@@ -20,15 +20,10 @@ urlpatterns = [
     path('detail', views.detail),
     path('update', views.update),
     path('delete', views.delete),
-    path('reply_insert', views.reply_insert),
     path('update_page', views.update_page),
-    path('reply_rating', views.reply_rating),
-    path('reply_update', views.reply_update),
-    path('reply_delete', views.reply_delete),
-    path('reply_update_page', views.reply_update_page),
-    path('evidence_insert', views.evidence_insert),
     path('profile_update', views.profile_update),
     path('profile', views.profile),
-    path('finished_dic', views.finished_dic),
+    path('pdf',views.to_pdf),
+    path('writepdf', views.writepdf)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

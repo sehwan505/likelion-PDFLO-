@@ -1,60 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="06cbb7e6-7051-4449-b3c3-1db920742886" name="Default Changelist" comment="" />
+    <list default="true" id="6a937ac3-6236-4eeb-9fab-90e66c59deed" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FavoritesManager">
-    <favorites_list name="write_test" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="HTML File" />
-        <option value="Python Script" />
-      </list>
-    </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>reply_rating</find>
-      <find>id</find>
-      <find>game</find>
-      <find>STATIC_ROOT = os.path.join(BASE_DIR, 'static')</find>
-      <find>links</find>
-      <find>write</find>
-      <find>home</find>
-      <find>win</find>
-      <find>reply</find>
-      <find>evidence</find>
-      <find>detail</find>
-      <find>post_extras</find>
-      <find>&gt;</find>
-      <find>&gt;`</find>
-      <find>boardlist</find>
-      <find>profile</find>
-      <find>게시물</find>
-    </findStrings>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="y" value="-10" />
-    <option name="width" value="980" />
-    <option name="height" value="1040" />
-  </component>
-  <component name="ProjectId" id="1fGdfj8RZpNJgYjZi79rfok2HAb" />
+  <component name="ProjectId" id="1ed2AgiAspATrlFty8fAEu2AHGr" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -63,33 +25,26 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="06cbb7e6-7051-4449-b3c3-1db920742886" name="Default Changelist" comment="" />
-      <created>1567340917660</created>
+      <changelist id="6a937ac3-6236-4eeb-9fab-90e66c59deed" name="Default Changelist" comment="" />
+      <created>1594637007538</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1567340917660</updated>
+      <updated>1594637007538</updated>
     </task>
     <servers />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/MEC/settings.py</url>
-          <line>132</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/MECboard/views.py</url>
-          <line>259</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/MECboard/models.py</url>
-          <line>64</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="WindowStateProjectService">
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594639012149">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1594639012149" />
+    <state x="548" y="167" key="FileChooserDialogImpl" timestamp="1595848467211">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="548" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1595848467211" />
+    <state x="277" y="57" key="SettingsEditor" timestamp="1594638934008">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1594638934008" />
   </component>
 </project>

@@ -11,14 +11,14 @@
 </head>
 <body>
         <h1>프로필</h1>
-        {% load staticfiles %}
+        {% load static %}
         <a href="/"><img src="{% static 'images/backsign.png' %}" width="50" height="50"></a><br>
         {% if profile.profile_photo %}
         <div align="center">
         <h2>프로필 사진:</h2>
         <img src="{{profile.profile_photo.url}}" width="200"> <br>
         {% else %}
-        {% load staticfiles %}
+        {% load static %}
         <img src="{% static 'images/file.gif' %}" width="200"> <br>
         {% endif %}
         {% if profile.nickname %}
@@ -27,41 +27,9 @@
         {% if profile.introduction %}
         <h2>소개 : {{profile.introduction}}</h2>
         {% endif %}
-        <table>
-        {% if profile.user_likelist.all %}
-            <tr>
-                <th>내가 공감을 단 댓글</th>
-                <th>날짜</th>
-                <th>공감수</th>
-            </tr>
-        {% for row in likeList %}
-            {% for row1 in profile.user_likelist.all %}
-            {% if row.idx == row1.idx %}
-            <tr>
-               <td><a href="detail?idx={{row.board_idx}}#{{row.idx}}{{row.vote}}">{{row.content}}</a></td>
-               <td>{{row.post_date}}</td>
-               <td>{{row.rating}}</td>
-            </tr>
-            {% endif %}
-            {% endfor %}
-        {% endfor %}
-        {% endif %}
-        {% if user_commentList %}
-            <tr>
-                <th>내가 쓴 댓글</th>
-                <th>날짜</th>
-                <th>공감수</th>
-            </tr>
-            {% for row2 in user_commentList %}
-               <tr row="1">
-                <td><a href="detail?idx={{row2.board_idx}}#{{row2.idx}}{{row2.vote}}">{{row2.content}}</a></td>
-                <td>{{row2.post_date}}</td>
-                <td>{{row2.rating}}</td>
-               </tr>
-        {% endfor %}
-        {% endif %}
-        </table>
         </div>
+
+
         {% if user == profile_user %}
         <div style="position:relative; bottom:0;"><a href="/profile_update">
             <button type="button">프로필 편집</button></a></div>

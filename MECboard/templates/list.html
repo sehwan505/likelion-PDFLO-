@@ -24,7 +24,7 @@ if ("{{login_failed}}" == "True")
 </script>
 <h2><a href="/">게시판</a></h2>
 {% if user.is_authenticated %}
-	안녕하십니까 {{user.username}}님<br>
+	안녕하십니까 {{profile.nickname}}님<br>
 	<a href="/accounts/logout">로그아웃</a>
 {% else %}
 	안녕하십니까 GUEST님<br>
@@ -32,8 +32,9 @@ if ("{{login_failed}}" == "True")
 	<a href="/login">로그인</a>
 	<!--<a href="/join">회원가입</a>-->
 {% endif %}<br>
-<div style="width:1000px;height:30px;text-align:right;"><a href="/profile">프로필</a></div>
-<div style="width:1000px;height:30px;text-align:right;"><a href="/finished_dic">종료된 토론</a></div>
+{% if user.is_authenticated %}
+	<div style="width:1000px;height:30px;text-align:right;"><a href="/profile">프로필</a></div>
+{% endif %}
 <form method="post">
 {% csrf_token %}
 <select name="search_option">
@@ -73,7 +74,7 @@ if ("{{login_failed}}" == "True")
 	</tr>
 	{% for row in boardList %}
 	<tr>
-		<th>유효 일자:{{row.post_date}}</th>
+		<th>작성일자:{{row.post_date}}</th>
 	</tr>
 	<tr>
 		<td><div style="text-align:center;">{{row.idx}}</div></td>
@@ -85,12 +86,11 @@ if ("{{login_failed}}" == "True")
 		<td><div style="width:240px;height:180px;text-align:center;"><a href="detail?idx={{row.idx}}">{{row.title}}</a></div></td>
 		{% endif %}
 		<td>{{row.hit}}</td>
-		<td>{{row.rating}}</td>
 
 		<td>
 			{% if row.filesize > 0 %}
 			<a href="download?idx={{row.idx}}">
-				{% load staticfiles %}
+				{% load static %}
 				<img src="{% static 'images/file.gif' %}"></a>
 			{% endif %}
 		</td>

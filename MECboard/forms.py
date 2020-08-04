@@ -13,7 +13,7 @@ class LoginForm(forms.ModelForm):
         model = User
         fields = ["username", "password"]
 
-class ProfileForm(forms.ModelForm):
+class ProfileForm(forms.ModelForm): # form과 모델form은 수동과 자동
     class Meta:
         model = Profile
-        fields = ['nickname','introduction', 'profile_photo',]
+        fields = ['nickname','introduction', 'profile_photo']

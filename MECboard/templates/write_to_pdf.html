@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+    function home(){
+	location.href="/";
+}
+function pdf(){
+	if (document.form1.title.value==""){
+		alert("제목를 입력하세요.");
+		document.form1.title.focus();
+		return;
+	}
+	if (document.form1.content.value==""){
+		alert("내용을 입력하세요.");
+		document.form1.content.focus();
+		return;
+	}
+	document.form1.submit();
+}
+</script>
+</head>
+<body>
+<form action="pdf" name="form1" method="post">
+    {% csrf_token %}
+    <table border="1" width="700px">
+    <tr>
+		<td>제 목: </td><td><input type="text" name="title" placeholder="제목을 입력하시오"></td>
+	</tr>
+	<tr>
+		<td>내  용 : </td><td><textarea rows="20" cols="82" name="content" placeholder="내용을 입력하세요"></textarea></td>
+	</tr>
+    <tr>
+		<td colspan="2" align="center">
+            <button type="button" onclick="pdf()" id="btnSave">pdf만들기</button>
+			<input type="button" value="목록" onclick="home()">
+		</td>
+	</tr>
+</table>
+</form>
+</body>
+</html>

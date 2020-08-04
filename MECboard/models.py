@@ -15,8 +15,8 @@ class Profile(models.Model):
     nickname = models.CharField(max_length=64)
     profile_photo = models.ImageField(blank=True, default="media/default.jpg", upload_to="media/images")
     username = models.CharField(max_length=6,default="")
-    user_commentlist = models.ManyToManyField('Comment', blank=True, related_name='user_commentlist')
-    user_likelist = models.ManyToManyField('Comment', blank=True, related_name='user_likelist')
+    # user_commentlist = models.ManyToManyField('Comment', blank=True, related_name='user_commentlist')
+    # user_likelist = models.ManyToManyField('Comment', blank=True, related_name='user_likelist')
 
 class Board(models.Model):
     idx = models.AutoField(primary_key=True)
@@ -48,28 +48,24 @@ class Board(models.Model):
     def rate_down(self):
         self.ratings_down += 1
 
-        
-class Comment(models.Model):
-    profile = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True)
-    idx = models.AutoField(primary_key=True)
-    board_idx = models.IntegerField(null=False)
-    writer = models.CharField(null=False, max_length=50)
-    writer_id = models.IntegerField(null=True)
-    content = models.TextField(null=False)
-    post_date = models.DateTimeField(default=datetime.now, blank=True)
-    vote = models.IntegerField(null=False)
-    rating = models.IntegerField(default=0)
-    filename = models.CharField(null=True, blank=True, default="", max_length=500)
-    filesize = models.IntegerField(default=0)
-    down = models.IntegerField(default=0)
-    evidence = models.BooleanField(default=False, null=False)
-    image = models.ImageField(default="media/default.jpg", upload_to="media/images")
+#
+# class Comment(models.Model):
+#     profile = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True)
+#     idx = models.AutoField(primary_key=True)
+#     board_idx = models.IntegerField(null=False)
+#     writer = models.CharField(null=False, max_length=50)
+#     writer_id = models.IntegerField(null=True)
+#     content = models.TextField(null=False)
+#     post_date = models.DateTimeField(default=datetime.now, blank=True)
+#     vote = models.IntegerField(null=False)
+#     rating = models.IntegerField(default=0)
+#     filename = models.CharField(null=True, blank=True, default="", max_length=500)
+#     filesize = models.IntegerField(default=0)
+#     down = models.IntegerField(default=0)
+#     evidence = models.BooleanField(default=False, null=False)
+#     image = models.ImageField(default="media/default.jpg", upload_to="media/images")
+#
 
-
-class UserForm(forms.ModelForm):
-    class Meta:
-        model = User
-        fields = ["username", "email", "password"]
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
