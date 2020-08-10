@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+
+{% if user.user.is_authenticated %}
+<p>{{user.nickname}} 님 반갑습니다</p>
+{% endif %}
+
+<body>
+
+{% for blog in blogs.all%}
+    <h1> {{blog.title}} </h1>
+    <p> {{blog.pub_date}} </p>
+    <p> 좋아요 수 : {{blog.like_num }}</p>
+{% endfor %}
+
+<br>
+
+<a href="{% url 'recommend' %}">추천받기</a>
+
+</body>
+
+{% endblock %}
