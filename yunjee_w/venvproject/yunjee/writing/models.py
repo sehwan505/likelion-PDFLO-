@@ -10,12 +10,13 @@ class Blog(models.Model):
     seller = models.TextField()
     content = models.TextField()
     content_list = models.TextField()
-    
-    
-    
+    count = models.IntegerField(default = 0)
+       
     def __str__(self):
         return self.name
 
+    def summary(self):
+        return self.body[:100]
 
 
 
