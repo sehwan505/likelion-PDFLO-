@@ -1,0 +1,29 @@
+<!-- 추천 페이지 -->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    {% extends 'base.html' %}
+</head>
+<body>
+{% block contents %}
+<h2>추천합니다</h2>
+
+{% for blog in blogs.all %}
+<div style="border-bottom:2px solid #111111;">
+    <li>{{ blog.title }}</li>
+    <li>좋아요 수 : {{blog.like_num }}</li>
+    <p> {{blog.summary}}<a href="{% url 'detail' blog.id %}">...more</a></p>
+</div>
+{% endfor %}
+
+
+<a href="{% url 'home' %}">돌아가기</a>
+{% endblock %}
+</body>
+</html>
