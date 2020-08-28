@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>글쓰기 페이지_2</title>
+</head>
+
+{% extends 'base.html' %}
+{% block content %}
+
+<body>
+    <div class="container">
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <br><br>
+            <h1>셀러 스토리</h1>
+            <h4>1. 셀러 이력 : 관련 이력을 기입해주세요. </h4>
+            <br>
+            <textarea name="seller" cols="30" rows="15" placeholder="관련 이력을 기입해주세요."></textarea>
+            <br>
+            <input type="file" name="image" value="이미지">
+            <br><br>
+
+            <h4>2. 셀러 스토리 : 셀러 님이 재능 혹은 정보를 얻기 위해 한 노력에 대해 얘기해주세요. </h4>
+            <textarea name="sellerStory" cols="30" rows="15" placeholder="셀러 님이 재능 혹은 정보를 얻기 위해 한 노력에 대해 얘기해주세요."></textarea>
+            <br>
+            <input type="file" name="image" value="이미지">
+            <br><br>
+            
+            <button class = "nextBtn2" name = "next">다음</button>
+        </form>
+    </div>
+
+</body>
+
+{% endblock %}
+
+</html>
