@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>세부내용</title>
+
+</head>
+{% extends 'base.html' %}
+
+{% block content %}
+
+<body>
+    <form action="{% url 'delete' %}">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+
+                <h1>{{blog.title}}</h1>
+                <p>{{blog.money}}</p>
+                <h5>{{blog.one_line}}</h5>
+                {% if blog.image %}
+                <img src="{{blog.image.url}}" alt="이미지가 없습니다." width="500" height="600">
+                {% endif %}
+                <h5>{{blog.seller}}</h5>
+                <p>{{blog.content}}</p>
+                <p>{{blog.content_list}}</p>
+                <p>#{{blog.tag1}} #{{blog.tag2}} #{{blog.tag3}} #{{blog.tag4}} #{{blog.tag4}} #{{blog.tag5}}</p>
+                <br>
+                <br>
+                <a href="{% url 'like' blog.id %}">
+                    {% if blog in account.like_blog.all %}
+                    취소
+                    {% else %}
+                    좋아요
+                    {% endif %}
+                </a>
+
+                <div>좋아요 수 : {{blog.like_num}}</div>
+
+
+                <input type="hidden" id="blogNum" name="blogNum" value="{{ blog.id }}">
+                <a href="{% url 'home' %}">돌아가기</a>
+                <input class="btn btn-dark" type="submit" value="삭제하기">
+            </div>
+        </div>
+
+    </form>
+
+</body>
+
+{% endblock %}
+
+</html>

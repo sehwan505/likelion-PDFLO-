@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인</title>
+</head>
+<body>
+    
+
+
+    <section class="login">
+        <h2>로그인</h2>
+        <ul>
+            <form method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+            <!--<li><input type="text" placeholder="아이디" name="id"></li>-->
+            <li><input type="text" placeholder="이메일" name="email"></li>
+            <li><input type="password" placeholder="비밀번호" name="password"></li>
+            <div style=" margin: 0 0 0 30px; color: red;" class="messages">
+                {% if messages %}
+                {% for message in messages %}
+                {{ message.message }}
+                {% endfor %}
+                {% endif %}
+            </div>
+            <li><button type="submit">로그인</button></li>
+            </form>
+            
+        </ul>
+        <div>
+            <ul>
+                <li><a href="{% url 'signup' %}">계정생성</a></li>
+            </ul>
+            
+        </div>
+
+        <div>
+           
+
+
+        </div>
+    </section>
+</body>
+</html>
