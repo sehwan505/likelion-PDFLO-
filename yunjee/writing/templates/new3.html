@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>글쓰기 페이지</title>
+</head>
+
+{% extends 'base.html' %}
+{% block content %}
+
+<body>
+    <div class="container">
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h1>PDF목차</h1>
+            <h4>PDF 목차를 상세히 입력해주세요.</h4>
+            <textarea name="content_list" id="" cols="40" rows="20"></textarea>
+            <br><br>
+            <button class="nextBtn" name="next">다음</button>
+        </form>
+    </div>
+
+</body>
+
+{% endblock %}
+
+</html>
