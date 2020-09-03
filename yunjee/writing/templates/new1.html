@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>글쓰기 페이지_1</title>
+</head>
+
+{% extends 'base.html' %}
+{% block content %}
+
+<body>
+    <div class="container">
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <br><br>
+            <h1>창작 스토리</h1>
+            <h4>1. PDF 주제 소개: 어떤 자료인가요? </h4>
+            <input type="text" name="subjectSum" placeholder="PDF주제를 요약해 설명해주세요." >
+            <br>
+            <textarea name="subject" cols="30" rows="15" placeholder="PDF 주제에 대해 설명해주세요."></textarea>
+            <br>
+            <input type="file" name="image" value="이미지">
+            <br><br>
+
+            <h4>2. 창작 배경 및 계기 : 어떻게 PDF 자료를 만들게 되었나요? </h4>
+            <input type="text" name="motiveSum" placeholder="계기를 요약해 설명해주세요.">
+            <br>
+            <textarea name="motive" cols="30" rows="15" placeholder="만들게 된 계기에 대해 설명해주세요."></textarea>
+            <br>
+            <input type="file" name="image" value="이미지">
+            <br><br>
+
+            <h4>3. PDF자료만의 특징: 다른 정보들과 차별화되는 내 자료만의 장점은 무엇인가요?</h4>
+            <input type="text" name="strengthSum" placeholder="장점을 요약해 설명해주세요.">
+            <br>
+            <textarea name="strength" cols="30" rows="15" placeholder="자신의 PDF에 대해 설명해주세요."></textarea>
+            <br>
+            <input type="file" name="image" value="이미지">
+            <br>
+            
+            <button class = "nextBtn" name = "next">다음</button>
+        </form>
+    </div>
+
+</body>
+
+{% endblock %}
+
+</html>
