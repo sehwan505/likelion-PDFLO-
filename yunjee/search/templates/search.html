@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>홈화면</title>
+</head>
+{% extends 'base.html' %}
+
+{% block content %}
+
+<body>
+
+    <div>
+        <p class="text-center">You have searched for : <b>"{{query}}"</b></p>
+    </div>
+
+    <div class="container">
+        <div class="row mx-auto">
+            {% for blog in blogs %}
+            <div class="my_bottom_margin col-9 col-sm-12 col-md-4 col-md-12 col-lg-4">
+                <div class="card text-center" style="min-width: 18rem;">
+                    <a href="{{blog.get_url}}"><img class="card-img-top my_image" src="{{blog.image.url}}" alt="{{blog.title]]"></a>
+                    <div class="card-body">
+                        <h4>{{blog.title}}</h4>
+                        <p>{{blog.money}}</p>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class=" row mx-auto">
+                <p class="text-center my_search_text">0 result found.</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</body>
+{% endblock %}
+
+
+</html>
