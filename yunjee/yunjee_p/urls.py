@@ -31,8 +31,7 @@ urlpatterns = [
     path('logout/', login.views.logout, name='logout'),
     path('accounts/', include('allauth.urls')),
     path('like/<int:blog_id>',writing.views.blog_like, name="like"),
-    path('recommend/',writing.views.recommend,name="recommend"),
-    path('search/', include('search.urls')),
+    path('recommend/',writing.views.recommend,name="recommend")
     
     
 

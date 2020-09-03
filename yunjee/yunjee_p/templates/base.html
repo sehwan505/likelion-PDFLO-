@@ -35,13 +35,6 @@
                     <a class="nav-link" href="{% url 'create' %}">글쓰기</a>
                 </li>
             </ul>
-            <!-- 검색 창 구현 -->
-            <form class="form-inline my-2 my-lg-0" action="{% url 'search:searchResult' %}" method="get">
-                {% csrf_token %}
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q">
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit"><i class="fad fa-search"></i></button>
-            </form>
-            <!-- 검색 창 구현 끝 -->
         </div>
     </nav>
 
