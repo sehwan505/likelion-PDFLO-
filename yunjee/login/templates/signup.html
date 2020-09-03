@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <section class="login">
+        <h2>계정생성</h2>
+        <ul>
+            <form method="POST" action="{% url 'signup' %}">
+            {% csrf_token %}
+            
+            
+            <!-- <li><input type="text" class="username_input" placeholder="아이디" name="id" ></li> --> 
+            
+            <li><input type="email" placeholder="email" name="email"></li>
+            <li><input type="password" placeholder="비밀번호"  name="password1"></li>
+            <li><input type="password" placeholder="비밀번호 확인" name="password2"></li>
+            <li><input type="text" placeholder="닉네임" name="nickname"></li>
+            <div style=" margin: 0 0 0 30px; color: red;" class="messages">
+                {% if messages %}
+                {% for message in messages %}
+                {{ message.message }}
+                {% endfor %}
+                {% endif %}
+            </div>
+            <li><button type="submit">계정 생성</button></li>
+
+            </form>
+            
+        </ul>
+    </section>
+</body>
+</html>
