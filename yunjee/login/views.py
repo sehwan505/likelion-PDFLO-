@@ -15,18 +15,19 @@ from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
 
 def signup(request):
     if request.method == 'POST':
-        user_id = request.POST.get('id')
+        #user_id = request.POST.get('id')
         pw1 = request.POST.get('password1')
         pw2 = request.POST.get('password2')
         email = request.POST.get('email')
         nickname = request.POST.get('nickname')
 
-        if user_id =="" or nickname =="" or email =="" or pw1 == "" or pw2 == "":
+        #if user_id =="" or nickname =="" or email =="" or pw1 == "" or pw2 == "":
+        if nickname =="" or email =="" or pw1 == "" or pw2 == "":
             messages.info(request, "모든 항목을 채워주세요")
             return redirect('signup')
 
         if not pw1 == pw2:
-            messages.info(request, "비밀번호가 다릅니다.")
+            messages.info(request, "비밀번호가 일치하지 않습니다. 다시 입력해주세요.")
             return redirect('signup')
 
 
@@ -35,12 +36,13 @@ def signup(request):
             messages.info(request, "이미 가입한 이메일입니다.")
             return redirect('signup')
         elif ObjectDoesNotExist:
-             user = User.objects.create_user(username = user_id, password = pw1)
+             #user = User.objects.create_user(username = user_id, password = pw1)
+             user = User.objects.create_user(username = email, password = pw1)
              user.save()
              account = Account(user=user, email=email, nickname=nickname)
              account.save()
              return redirect('login')
-            
+    return render(request, 'signup.html')        
         
         
         
@@ -78,21 +80,23 @@ def signup(request):
         #return redirect('login')
     #else:
         #return render(request, 'signup.html')
-    return render(request, 'signup.html')
+    
 
 
 def login(request):
     if request.method == "POST":
-        username = request.POST['id']
+        #username = request.POST['id']
+        email = request.POST["email"]
         password = request.POST["password"]
 
-        user = auth.authenticate(request, username=username, password=password)
+        #user = auth.authenticate(request, username=username, password=password)
+        user = auth.authenticate(request, username=email, password=password)
 
         if user is not None:
             auth.login(request, user)
             return redirect('home')
         else:
-            messages.info(request, "회원정보가 일치하지 않습니다.")
+            messages.info(request, "비밀번호가 일치하지 않거나, 가입하지 않은 계정입니다.")
             return redirect('login')
     else:
         return render(request, 'login.html')
