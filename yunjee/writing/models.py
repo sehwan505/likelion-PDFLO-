@@ -1,8 +1,5 @@
 from django.db import models
-<<<<<<< HEAD
 from django.urls import reverse
-=======
->>>>>>> pr/10
 
 
 # Create your models here.
@@ -24,12 +21,9 @@ class Blog(models.Model):
     def summary(self):
         return self.body[:100]
 
-<<<<<<< HEAD
     def get_url(self):
         return reverse('detail', args=[self.id])
 
-=======
->>>>>>> pr/10
 
 
     

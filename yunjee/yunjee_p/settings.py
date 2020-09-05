@@ -46,15 +46,6 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
-<<<<<<< HEAD
-=======
-
-    #페이스북
-    'allauth.socialaccount.providers.facebook',
-
-    #카카오
-    'allauth.socialaccount.providers.kakao',
->>>>>>> pr/10
     
     
 ]
@@ -74,11 +65,7 @@ ROOT_URLCONF = 'yunjee_p.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-<<<<<<< HEAD
         'DIRS': ['yunjee_p/templates', os.path.join(BASE_DIR, 'search', 'templates/')],
-=======
-        'DIRS': ['yunjee_p/templates'],
->>>>>>> pr/10
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -137,10 +124,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-<<<<<<< HEAD
 SITE_ID = 1
-=======
->>>>>>> pr/10
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
@@ -151,16 +135,3 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-<<<<<<< HEAD
-=======
-AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
-)
-
-SITE_ID = 1
-
-LOGIN_REDIRECT_URL = '/'
-
-
->>>>>>> pr/10
