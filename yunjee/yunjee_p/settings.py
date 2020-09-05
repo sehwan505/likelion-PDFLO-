@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'writing.apps.WritingConfig',
     'login',
+    'search',
+    
 
     #구글
     'django.contrib.sites',
@@ -65,7 +67,7 @@ ROOT_URLCONF = 'yunjee_p.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['yunjee_p/templates'],
+        'DIRS': ['yunjee_p/templates', os.path.join(BASE_DIR, 'search', 'templates/')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -124,6 +126,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+SITE_ID = 1
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/

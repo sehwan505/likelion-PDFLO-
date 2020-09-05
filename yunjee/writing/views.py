@@ -5,10 +5,11 @@ from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
 def home(request):
-    blogs = Blog.objects
+    blogs = Blog.objects 
+    account = Account.objects.get(user = request.user)   
     if request.user.is_authenticated:
         now_login = Account.objects.get(user=request.user)
-        return render(request, 'home.html', {'blogs': blogs,'user': now_login})
+        return render(request, 'home.html', {'blogs': blogs,'user': now_login, 'account': account})
     else:
         return render(request, 'home.html',{'blogs': blogs})
 
@@ -26,7 +27,7 @@ def create(request):
         blog.save()
         return redirect('/blog/' + str(blog.id))
     elif request.method == 'GET':
-        return render(request, 'new.html')
+        return render(request, 'new1.html')
 
 def detail(request, blog_id):
     blog = Blog()
