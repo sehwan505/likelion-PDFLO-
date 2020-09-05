@@ -15,6 +15,8 @@
     {% load socialaccount %}
     {% providers_media_js %}
 
+    <a href="/accounts/signup">구글 회원가입</a>
+
     {% if user.user.is_authenticated %}
     <p>{{user.nickname}}님 반갑습니다.</p>
     <a href="{% url 'logout' %}">로그아웃</a>
@@ -23,8 +25,7 @@
     <a href="{% url 'signup' %}">회원가입</a>
     <a href="{% url 'login' %}">로그인</a>
     <a href="{% provider_login_url 'google' %}">구글 로그인</a>
-    <a href="{% provider_login_url 'facebook' %}">페이스북 로그인</a>
-    <a href="{% provider_login_url 'kakao' %}">카카오 로그인</a>
+
     {% endif %}
     <br>
      <a href="{% url 'recommend' %}">추천</a>
