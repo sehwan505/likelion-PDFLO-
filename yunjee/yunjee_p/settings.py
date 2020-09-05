@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'writing.apps.WritingConfig',
     'login',
+    'search',
 
     #구글
     'django.contrib.sites',
