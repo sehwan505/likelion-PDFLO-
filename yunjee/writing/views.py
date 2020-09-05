@@ -62,9 +62,15 @@ def blog_like(request, blog_id):
 
 # 좋아요 순으로 내림차순 정렬
 
+<<<<<<< HEAD
 def recommend(request):
     blogs = Blog.objects.all().order_by('-like_num', '-pub_date')
     return render(request, 'recommend.html', {'blogs':blogs})
+=======
+def recommended(request):
+    blogs = Blog.objects.all().order_by('-like_num', '-pub_date')
+    return render(request, 'recommended.html', {'blogs':blogs})
+>>>>>>> pr/10
 
 
 

@@ -15,8 +15,11 @@
     {% load socialaccount %}
     {% providers_media_js %}
 
+<<<<<<< HEAD
     <a href="/accounts/signup">구글 회원가입</a>
 
+=======
+>>>>>>> pr/10
     {% if user.user.is_authenticated %}
     <p>{{user.nickname}}님 반갑습니다.</p>
     <a href="{% url 'logout' %}">로그아웃</a>
@@ -25,10 +28,18 @@
     <a href="{% url 'signup' %}">회원가입</a>
     <a href="{% url 'login' %}">로그인</a>
     <a href="{% provider_login_url 'google' %}">구글 로그인</a>
+<<<<<<< HEAD
 
     {% endif %}
     <br>
      <a href="{% url 'recommend' %}">추천</a>
+=======
+    <a href="{% provider_login_url 'facebook' %}">페이스북 로그인</a>
+    <a href="{% provider_login_url 'kakao' %}">카카오 로그인</a>
+    {% endif %}
+    <br>
+     <a href="{% url 'recommended' %}">추천</a>
+>>>>>>> pr/10
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             {% for blog in blogs.all %}
