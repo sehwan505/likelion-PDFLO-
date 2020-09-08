@@ -6,12 +6,14 @@ from .models import Account
 
 #중복
 from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
-#import json
-#from django.http import HttpResponse, JsonResponse
-#from django.views import View
+
 
 
 # Create your views here.
+
+
+
+
 
 def signup(request):
     if request.method == 'POST':
