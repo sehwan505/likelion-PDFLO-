@@ -2,6 +2,7 @@ from django.db import models
 from django.urls import reverse
 
 
+
 # Create your models here.
 class Blog(models.Model):
     title = models.CharField(max_length = 200)
@@ -23,8 +24,6 @@ class Blog(models.Model):
 
     def get_url(self):
         return reverse('detail', args=[self.id])
-
-
 
     
 

@@ -8,11 +8,7 @@ from .models import Account
 from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
 
 
-
 # Create your views here.
-
-
-
 
 
 def signup(request):

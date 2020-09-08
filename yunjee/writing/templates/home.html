@@ -14,8 +14,7 @@
 <body>
     {% load socialaccount %}
     {% providers_media_js %}
-
-
+    
     {% if user.user.is_authenticated %}
     <p>{{user.nickname}}님 반갑습니다.</p>
     <a href="{% url 'logout' %}">로그아웃</a>
@@ -29,7 +28,8 @@
 
     {% endif %}
     <br>
-     <a href="{% url 'recommend' %}">추천</a>
+
+    <a href="{% url 'recommend' %}">추천</a>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             {% for blog in blogs.all %}

@@ -34,6 +34,5 @@ urlpatterns = [
     path('recommend/',writing.views.recommend,name="recommend"),
     path('search/', include('search.urls')),
     
-    
 
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
