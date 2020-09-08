@@ -40,8 +40,7 @@ INSTALLED_APPS = [
     'writing.apps.WritingConfig',
     'login',
     'search',
-
-
+    
     #구글
     'django.contrib.sites',
     'allauth',
@@ -55,7 +54,7 @@ INSTALLED_APPS = [
 
     #카카오
     'allauth.socialaccount.providers.kakao',
-    
+
     
 ]
 
@@ -75,7 +74,6 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': ['yunjee_p/templates', os.path.join(BASE_DIR, 'search', 'templates/')],
-
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -145,7 +143,6 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
@@ -154,5 +151,4 @@ AUTHENTICATION_BACKENDS = (
 SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/'
-
 
