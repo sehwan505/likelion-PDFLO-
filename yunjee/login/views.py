@@ -2,7 +2,9 @@ from django.shortcuts import render,redirect
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib import auth
+from django.views.decorators.csrf import csrf_exempt
 from .models import Account
+from .forms  import ProfileForm
 
 #중복
 from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
@@ -103,5 +105,30 @@ def login(request):
 def logout(request):
     auth.logout(request)
     return redirect('home')
+
+
+def profile(request):
+    account = Account.objects.get(user=request.user)
+
+    return render(request,"profile.html",
+                              {"account": account})
+
+
+@csrf_exempt
+def profile_update(request):
+    account = Account.objects.get(user=request.user)
+    profile_form = ProfileForm(request.POST, request.FILES)
+    if profile_form.is_valid():
+        account.nickname = profile_form.cleaned_data['nickname']
+        account.introduction = profile_form.cleaned_data['introduction']
+        account.profile_photo = profile_form.cleaned_data['profile_photo']
+        account.save()
+        return redirect('/profile', {"account": account})
+    else:
+        profile_form = ProfileForm(instance=account)
+    return render(request, 'profile_update.html', {
+        'profile_form': profile_form
+    })
+
 
 

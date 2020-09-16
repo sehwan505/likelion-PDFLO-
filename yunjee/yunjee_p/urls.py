@@ -34,6 +34,10 @@ urlpatterns = [
     path('recommend/',writing.views.recommend,name="recommend"),
     path('search/', include('search.urls')),
 
+
+    path('profile/',login.views.profile, name="profile"),
+    path('profile_update/',login.views.profile_update)
+
     
 
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

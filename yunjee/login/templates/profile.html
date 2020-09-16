@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>profile</title>
+<!--    <link rel="shortcut icon" type="image/x-icon" href="">-->
+</head>
+<body>
+        <a href="/">홈</a>
+        <h1>프로필</h1>
+        {% if account.profile_photo %}
+                <div align="center">
+                <h2>프로필 사진:</h2>
+                <img src="{{account.profile_photo.url}}" width="200"> <br>
+        {% endif %}
+        {% if account.nickname %}
+                <h2>닉네임 : {{account.nickname}}</h2>
+        {% endif %}
+        {% if account.introduction %}
+                <h2>소개 : {{account.introduction}}</h2>
+        {% endif %}
+        {% if account.blog_like.all %}
+            <tr>
+                <th>내가 공감을 단 글</th>
+                <th>컨텐츠</th>
+            </tr>
+            {% for row in account.blog_like.all %}
+            <tr>
+<!--               <td><a href="detail?idx={{row.board_idx}}#{{row.idx}}{{row.vote}}">{{row.content}}</a></td>-->
+               <td>{{row.title}}1</td>
+               <td>{{row.content}}</td>
+            </tr>
+            {% endfor %}
+        {% endif %}
+        </div>
+
+        <div style="position:relative; bottom:0;"><a href="/profile_update">
+            <button type="button">프로필 편집</button></a></div>
+</body>
+</html>

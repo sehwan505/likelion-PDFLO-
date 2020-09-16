@@ -6,6 +6,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 def home(request):
     blogs = Blog.objects
+    print(request.user.is_authenticated)
     if request.user.is_authenticated:
         now_login = Account.objects.get(user=request.user)
         return render(request, 'home.html', {'blogs': blogs,'user': now_login})

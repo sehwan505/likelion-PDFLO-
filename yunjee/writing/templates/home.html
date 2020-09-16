@@ -18,7 +18,7 @@
     {% if user.user.is_authenticated %}
     <p>{{user.nickname}}님 반갑습니다.</p>
     <a href="{% url 'logout' %}">로그아웃</a>
-
+    <a href="{% url 'profile' %}">프로필</a>
     {% else %}
     <a href="{% url 'signup' %}">회원가입</a>
     <a href="{% url 'login' %}">로그인</a>
@@ -30,6 +30,7 @@
     <br>
 
     <a href="{% url 'recommend' %}">추천</a>
+
 
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
