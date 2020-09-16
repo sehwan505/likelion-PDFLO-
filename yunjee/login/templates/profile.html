@@ -18,18 +18,21 @@
         {% if account.introduction %}
                 <h2>소개 : {{account.introduction}}</h2>
         {% endif %}
-        {% if account.blog_like.all %}
+
+        {% if account.like_blog.all %}
+            <table border="1">
             <tr>
-                <th>내가 공감을 단 글</th>
+                <th>내가 공감한 글</th>
                 <th>컨텐츠</th>
             </tr>
-            {% for row in account.blog_like.all %}
+            {% for row in account.like_blog.all %}
             <tr>
-<!--               <td><a href="detail?idx={{row.board_idx}}#{{row.idx}}{{row.vote}}">{{row.content}}</a></td>-->
-               <td>{{row.title}}1</td>
+               <td><a href="{% url 'detail' row.id %}">{{row.title}}</a></td>
                <td>{{row.content}}</td>
             </tr>
+
             {% endfor %}
+            </table>
         {% endif %}
         </div>
 
