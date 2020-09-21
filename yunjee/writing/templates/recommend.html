@@ -8,7 +8,6 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    {% extends 'base.html' %}
 </head>
 <body>
 {% block contents %}
@@ -18,7 +17,7 @@
 <div style="border-bottom:2px solid #111111;">
     <li>{{ blog.title }}</li>
     <li>좋아요 수 : {{blog.like_num }}</li>
-    <p> {{blog.summary}}<a href="{% url 'detail' blog.id %}">...more</a></p>
+    <p> {{blog.content}}<a href="{% url 'detail' blog.id %}">...more</a></p>
 </div>
 {% endfor %}
 
