@@ -40,15 +40,22 @@ INSTALLED_APPS = [
     'writing.apps.WritingConfig',
     'login',
     'search',
+    'review.apps.ReviewConfig',
     
-
     #구글
     'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
-    
+
+
+    #페이스북
+    'allauth.socialaccount.providers.facebook',
+
+    #카카오
+    'allauth.socialaccount.providers.kakao',
+
     
 ]
 
@@ -136,4 +143,13 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
+SITE_ID = 1
+
+LOGIN_REDIRECT_URL = '/'
 

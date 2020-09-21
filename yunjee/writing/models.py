@@ -15,8 +15,6 @@ class Blog(models.Model):
     count = models.IntegerField(default = 0)
     like_num = models.PositiveIntegerField(default=0, blank=True)
 
-    def __str__(self):
-        return self.name
 
     def summary(self):
         return self.body[:100]
@@ -24,9 +22,6 @@ class Blog(models.Model):
     def get_url(self):
         return reverse('detail', args=[self.id])
 
-
-
-    
 
 
     
