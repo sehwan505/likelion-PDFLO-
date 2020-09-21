@@ -9,7 +9,7 @@ def home(request):
     blogs = Blog.objects
     if request.user.is_authenticated:
         now_login = Account.objects.get(user=request.user)
-        return render(request, 'home.html', {'blogs': blogs,'user': now_login, 'account' : account})
+        return render(request, 'home.html', {'blogs': blogs,'user': now_login, 'account' : now_login})
     else:
         return render(request, 'home.html',{'blogs': blogs})
 
