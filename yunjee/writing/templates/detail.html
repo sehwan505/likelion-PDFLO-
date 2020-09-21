@@ -26,7 +26,6 @@
                 <h5>{{blog.seller}}</h5>
                 <p>{{blog.content}}</p>
                 <p>{{blog.content_list}}</p>
-                <p>#{{blog.tag1}} #{{blog.tag2}} #{{blog.tag3}} #{{blog.tag4}} #{{blog.tag4}} #{{blog.tag5}}</p>
                 <br>
                 <br>
                 <a href="{% url 'like' blog.id %}">
@@ -39,14 +38,31 @@
 
                 <div>좋아요 수 : {{blog.like_num}}</div>
 
+                <br>
 
                 <input type="hidden" id="blogNum" name="blogNum" value="{{ blog.id }}">
                 <a href="{% url 'home' %}">돌아가기</a>
                 <input class="btn btn-dark" type="submit" value="삭제하기">
             </div>
         </div>
-
     </form>
+
+    {% for review in reviews %}
+    <div class="review">
+        <p>작성자 : {{review.review_user}}</p>
+        <p>{{review.review_body}}</p>
+    </div>
+    {% empty %}
+        <p>리뷰가 없습니다.</p>
+    {% endfor %}
+
+    <form method="POST" action= "{% url 'review' %}">
+        {% csrf_token %}
+        <input type="hidden" value="{{blog.id}}" name="blog">
+        <input type="text" name="review_body"></input>
+        <button type="submit" class="btn btn-secondary">작성</button>
+    </form>
+
 
 </body>
 

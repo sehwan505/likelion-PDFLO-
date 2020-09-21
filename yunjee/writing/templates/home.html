@@ -31,7 +31,6 @@
 
     <a href="{% url 'recommend' %}">추천</a>
 
-
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             {% for blog in blogs.all %}
@@ -44,9 +43,9 @@
             <h5>{{blog.seller}}</h5>
             <p>{{blog.content}}<a href="{% url 'detail' blog.id %}">...더보기</a></p>
             <p>{{blog.content_list}}</p>
-            <p>#{{blog.tag1}} #{{blog.tag2}} #{{blog.tag3}} #{{blog.tag4}} #{{blog.tag4}} #{{blog.tag5}}</p>
             <br>
             <br>
+    
             {% endfor %}
         </div>
     </div>

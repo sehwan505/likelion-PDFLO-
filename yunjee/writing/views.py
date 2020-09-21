@@ -1,15 +1,15 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Blog
+from review.models import Review
 from login.models import Account
 from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
 def home(request):
     blogs = Blog.objects
-    print(request.user.is_authenticated)
     if request.user.is_authenticated:
         now_login = Account.objects.get(user=request.user)
-        return render(request, 'home.html', {'blogs': blogs,'user': now_login})
+        return render(request, 'home.html', {'blogs': blogs,'user': now_login, 'account' : account})
     else:
         return render(request, 'home.html',{'blogs': blogs})
 
@@ -31,11 +31,12 @@ def create(request):
 
 def detail(request, blog_id):
     blog = Blog()
+    reviews = Review.objects.filter(blog=blog_id)
     blog_detail = get_object_or_404(Blog, pk=blog_id)
     blog.count += 1
     blog.save()
     account = Account.objects.get(user=request.user)
-    return render(request, 'detail.html', {'blog': blog_detail, 'account': account})
+    return render(request, 'detail.html', {'blog': blog_detail, 'account': account, 'reviews' : reviews})
 
 def delete(request):
     del_id = request.GET['blogNum']

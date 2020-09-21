@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'writing.apps.WritingConfig',
     'login',
     'search',
+    'review.apps.ReviewConfig',
+
     
     #구글
     'django.contrib.sites',
