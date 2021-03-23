@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="kr">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mainpage</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href='{% static "background.css" %}'>
+    <style type="text/css">
+        .red {
+        width: auto;
+        height: 320px;
+        border: 1px solid var(--unnamed-color-c7c7c7);
+        background: transparent url('{% static "img/red.png" %}') 0% 0% no-repeat padding-box;
+        border: 1px solid #C7C7C7;
+        opacity: 1;
+        margin: 100px auto 0px auto;
+        }
+
+        a {
+            text-decoration: none
+        }
+    </style>
+
+</head>
+
+<body>
+    {% include "header.html" %}
+    <div class="red">
+        <div class="maintext">
+            <p class="text1">외출이 부담스럽다면? <br>집에서 지식얻고 돈도벌고!</p>
+            <p class="text2">PDF사이트 신규런칭! 서비스를 자세히 알아보세요</p>
+            <div class="more">
+                <form action="more">
+                    <input type="button" value="자세히보기" class="search">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="open">
+        <p class="text3">오픈 기념 무료 PDF</p>
+        <p class="text4">신규 오픈 PDF 한정! 무료 구매 혜택을 드려요.</p>
+        <div class="pdf">
+            <div class="like">
+                <div class="img1"></div>
+                <div class="heart">
+                    <a href="">
+                        <img src="{% static 'img/heart-nonpick.png' %}" alt="">
+                    </a>
+                </div>
+                </a>
+                <a class="img1-1" href="">
+                    <p>한 번에 합격하는 자소서 꿀팁</p>
+                </a>
+                <p class="img1-2">삼성전자, sk하이닉스 등 대기업 9군데 최초합의 비결</p>
+                <div class="hashtags">
+                    <a class="hashtag" href="">#실무</a>
+                    <a class="hashtag" href="">#자소서</a>
+                </div>
+            </div>
+            <div class="like">
+                <div class="img1"></div>
+                <div class="heart">
+                    <a href="">
+                        <img src="{% static 'img/heart-nonpick.png' %}" alt="">
+                    </a>
+                </div>
+                </a>
+                <a class="img1-1" href="">
+                    <p>한 번에 합격하는 자소서 꿀팁</p>
+                </a>
+                <p class="img1-2">삼성전자, sk하이닉스 등 대기업 9군데 최초합의 비결</p>
+                <div class="hashtags">
+                    <a class="hashtag" href="">#실무</a>
+                    <a class="hashtag" href="">#자소서</a>
+                </div>
+            </div>
+            <div class="like">
+                <div class="img1"></div>
+                <div class="heart">
+                    <a href="">
+                        <img src="{% static 'img/heart-nonpick.png' %}" alt="">
+                    </a>
+                </div>
+                </a>
+                <a class="img1-1" href="">
+                    <p>한 번에 합격하는 자소서 꿀팁</p>
+                </a>
+                <p class="img1-2">삼성전자, sk하이닉스 등 대기업 9군데 최초합의 비결</p>
+                <div class="hashtags">
+                    <a class="hashtag" href="">#실무</a>
+                    <a class="hashtag" href="">#자소서</a>
+                </div>
+            </div>
+        </div>
+        <div class="pdf2">
+            <p class="pdf2-1"> PDF로 부수입 만드는 방법</p>
+            <p class="pdf2-2">PDF 자료, 나도 쉽게 만들어 업로드 할 수 있어요.</p>
+        </div>
+        <div class="pdf3">
+            <p class="pdf3-1">실시간 인기순</p>
+            <div class="pdf">
+                <div class="like">
+                    <div class="img1"></div>
+                    <div class="heart">
+                        <a href="">
+                            <img src="{% static 'img/heart-nonpick.png' %}" alt="">
+                        </a>
+                    </div>
+                    </a>
+                    <a class="img1-1" href="">
+                        <p>한 번에 합격하는 자소서 꿀팁</p>
+                    </a>
+                    <p class="img1-2">삼성전자, sk하이닉스 등 대기업 9군데 최초합의 비결</p>
+                    <div class="hashtags">
+                        <a class="hashtag" href="">#실무</a>
+                        <a class="hashtag" href="">#자소서</a>
+                    </div>
+                </div>
+                <div class="like">
+                    <div class="img1"></div>
+                    <div class="heart">
+                        <a href="">
+                            <img src="{% static 'img/heart-nonpick.png' %}" alt="">
+                        </a>
+                    </div>
+                    </a>
+                    <a class="img1-1" href="">
+                        <p>한 번에 합격하는 자소서 꿀팁</p>
+                    </a>
+                    <p class="img1-2">삼성전자, sk하이닉스 등 대기업 9군데 최초합의 비결</p>
+                    <div class="hashtags">
+                        <a class="hashtag" href="">#실무</a>
+                        <a class="hashtag" href="">#자소서</a>
+                    </div>
+                </div>
+                <div class="like">
+                    <div class="img1"></div>
+                    <div class="heart">
+                        <a href="">
+                            <img src="{% static 'img/heart-nonpick.png' %}" alt="">
+                        </a>
+                    </div>
+                    </a>
+                    <a class="img1-1" href="">
+                        <p>한 번에 합격하는 자소서 꿀팁</p>
+                    </a>
+                    <p class="img1-2">삼성전자, sk하이닉스 등 대기업 9군데 최초합의 비결</p>
+                    <div class="hashtags">
+                        <a class="hashtag" href="">#실무</a>
+                        <a class="hashtag" href="">#자소서</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -9,25 +9,62 @@ def home(request):
     blogs = Blog.objects
     if request.user.is_authenticated:
         now_login = Account.objects.get(user=request.user)
-        return render(request, 'home.html', {'blogs': blogs,'user': now_login, 'account' : now_login})
+        return render(request, 'mainpage.html', {'blogs': blogs,'account' : now_login})#
     else:
-        return render(request, 'home.html',{'blogs': blogs})
+        return render(request, 'mainpage.html', {'blogs': blogs})
 
-def create(request):
+def create(request, step):
     if request.method == 'POST':
-        blog = Blog()
-        blog.title = request.POST['title']
-        blog.money = request.POST['money']
-        blog.one_line = request.POST['one_line']
-        if request.FILES:
-            blog.image = request.FILES['image']
-        blog.seller = request.POST['seller']
-        blog.content = request.POST['content']
-        blog.content_list = request.POST['content_list']        
-        blog.save()
-        return redirect('/blog/' + str(blog.id))
+        if step == 1:
+            print(request.POST)
+            return render(request, 'inputpage_1.html')
+        elif step == 2:
+            blog = Blog()
+            blog.title = request.POST['title']
+            blog.money = request.POST['money']
+            blog.one_line = request.POST['one_line']
+            blog.page = request.POST['page']
+            if request.FILES:
+                blog.image = request.FILES['image']
+            blog.save()
+            return render(request, 'inputpage_2.html', {'blog_id' : blog.id})
+        elif step == 3:
+            blog = get_object_or_404(Blog, id=request.POST['id'])
+            blog.seller = request.POST['seller']
+            blog.seller_num = request.POST['seller_num']
+            blog.seller_comment = request.POST['seller_comment']
+            blog.save()
+            return render(request, 'inputpage_3.html', {'blog_id' : blog.id})
+        elif step == 4:
+            blog = get_object_or_404(Blog, id=request.POST['id'])
+            blog.pdf_subject1 = request.POST['pdf_subject1']
+            blog.pdf_subject2 = request.POST['pdf_subject2']
+            blog.pdf_why1 = request.POST['pdf_why1']
+            blog.pdf_why2 = request.POST['pdf_why2']
+            blog.pdf_spec1 = request.POST['pdf_spec1']
+            blog.pdf_spec2 = request.POST['pdf_spec2']
+            blog.save()
+            return render(request, 'inputpage_4.html', {'blog_id' : blog.id})
+        elif step == 5:
+            blog = get_object_or_404(Blog, id=request.POST['id'])
+            blog.seller_spec = request.POST['seller_spec']
+            blog.seller_story = request.POST['seller_story']
+            blog.save()
+            return render(request, 'inputpage_5.html', {'blog_id' : blog.id})
+        elif step == 6:
+            blog = get_object_or_404(Blog, id=request.POST['id'])
+            blog.content_list = request.POST['content_list']
+            blog.save()
+            return render(request, 'inputpage_6.html', {'blog_id' : blog.id})
+        #elif step == 7:
+         #   blog = get_object_or_404(Blog, id=request.POST['id'])
+          #  blog.content_list = request.POST['content_list']
+           # blog.save()
+            blog = get_object_or_404(Blog, id=request.POST['id'])
+            print(blog)
+        return redirect('/')
     elif request.method == 'GET':
-        return render(request, 'new.html')
+        return render(request, 'inputpage_1.html')
 
 def detail(request, blog_id):
     blog = Blog()

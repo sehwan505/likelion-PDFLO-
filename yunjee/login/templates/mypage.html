@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="kr">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mypage</title>
+    <link rel="stylesheet" media="screen and (min-width: 1024px)" href="{% static 'style2-mypage.css' %}">
+    <link rel="stylesheet" media="screen and (max-width: 1024px)" href="{% static 'mypage1024.css' %}" />
+    <link rel="stylesheet" media="screen and (max-width: 768px)" href="{% static 'mypage768.css' %}" >
+</head>
+
+<body>
+    {% include "header.html" %}
+    <div class="box1">
+        <div class="img1" style="border: transparent;">
+            <p class="box1text1">박혜린</p>
+            <div class="box4">
+                <form action="point">
+                    <input type="button" class="point" value="">
+                </form>
+            </div>
+            <p class="box1text2">디자이너 쏘이</p>
+            <div>
+
+                <button class="button1">셀러 모드로 &nbsp; &nbsp; <img src="{% static 'img/circle15 – 1.png' %}" alt="" class="component"></button>
+            </div>
+            <div class="verticalline">
+                <div class="button2">
+                    <button class="wishlist">  </button>
+                    <p class="wishlisttext">위시리스트</p>
+                    <p class="wishlisttext1">23개</p>
+                </div>
+                <div class="button3">
+                    <button class="points"></button>
+                    <p class="pointstext1">포인트</p>
+                    <p class="pointstext2">6,700p</p>
+                </div>
+                <div class="button4">
+                    <button class="review"></button>
+                    <p class="review1">리뷰</p>
+                    <p class="review2">6개</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="box2">
+        <p class="box2text1">위시리스트</p>
+
+        <div class="list1">
+            <form action="check" class="checkbox">
+                <input type="checkbox">
+            </form>
+            <button class="discount">50% 할인</button>
+            <p class="list1text1">한 번에 합격하는 자소서 꿀팁</p>
+            <p class="list1text2">14,000원</p>
+        </div>
+
+        <div class="list2">
+            <form action="check" class="checkbox">
+                <input type="checkbox">
+            </form>
+            <button class="discount">50% 할인</button>
+            <p class="list1text1">한 번에 합격하는 자소서 꿀팁</p>
+            <p class="list1text2">8,000원</p>
+        </div>
+
+        <div class="list3">
+            <form action="check" class="checkbox">
+                <input type="checkbox">
+            </form>
+            <p class="list1text1">한 번에 합격하는 자소서 꿀팁</p>
+            <p class="list1text2">9,000원</p>
+        </div>
+
+        <div class="list4">
+            <form action="check" class="checkbox">
+                <input type="checkbox">
+            </form>
+            <p class="list1text1">한 번에 합격하는 자소서 꿀팁</p>
+            <p class="list1text2">21,000원</p>
+        </div>
+
+    </div>
+    <div >
+        <form action="point">
+            <input type="button" class="point1" value="">
+        </form>
+    </div>
+    <div >
+        <form action="point">
+            <input type="button" class="point4" value="">
+        </form>
+    </div>
+
+    <div>
+        <form action="button">
+            <input type="button" value="한번에 결제하기" class="button">
+            <p class="money">총 17,000원</p>
+        </form>
+    </div>
+    <div class="box3">
+        <h1 class="box3text1">수강 목록</h1>
+
+        <div class="list1">
+            <p class="list1text1">한 번에 합격하는 자소서 꿀팁</p>
+            <form action="review">
+                <input type="button" value="리뷰 작성하기" class="box3review">
+            </form>
+        </div>
+
+        <div class="list2">
+            <p class="list1text1">한 번에 합격하는 자소서 꿀팁</p>
+            <form action="review">
+                <input type="button" value="리뷰 작성하기" class="box3review">
+            </form>
+        </div>
+
+        <div class="list3">
+            <p class="list1text1">한 번에 합격하는 자소서 꿀팁</p>
+            <form action="review">
+                <input type="button" value="리뷰 작성하기" class="box3review">
+            </form>
+        </div>
+
+        <div class="list4">
+
+            <p class="list1text1">한 번에 합격하는 자소서 꿀팁</p>
+            <form action="review">
+                <input type="button" value="리뷰 작성하기" class="box3review">
+            </form>
+        </div>
+    </div>
+    <div>
+        <form action="point">
+            <input type="button" class="point2" value="">
+        </form>
+    </div>
+    <div>
+        <form action="point">
+            <input type="button" class="point5" value="">
+        </form>
+    </div>
+
+    <div class="bottom">
+    </div>
+</body>
+
+</html>

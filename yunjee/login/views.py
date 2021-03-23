@@ -84,23 +84,10 @@ def signup(request):
 
 
 def login(request):
-    if request.method == "POST":
-        #username = request.POST['id']
-        email = request.POST["email"]
-        password = request.POST["password"]
-
-        #user = auth.authenticate(request, username=username, password=password)
-        user = auth.authenticate(request, username=email, password=password)
-
-        if user is not None:
-            auth.login(request, user)
-            return redirect('home')
-        else:
-            messages.info(request, "비밀번호가 일치하지 않거나, 가입하지 않은 계정입니다.")
-            return redirect('login')
+    if (request.user.is_authenticated == 0):
+        return render(request, 'loginpage-1.html')
     else:
-        return render(request, 'login.html')
-    return render(request, 'login.html')
+        return redirect('/')
 
 def logout(request):
     auth.logout(request)
@@ -110,9 +97,8 @@ def logout(request):
 def profile(request):
     account = Account.objects.get(user=request.user)
 
-    return render(request,"profile.html",
+    return render(request,"mypage.html",
                               {"account": account})
-
 
 @csrf_exempt
 def profile_update(request):

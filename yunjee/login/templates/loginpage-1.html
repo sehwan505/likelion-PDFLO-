@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="kr">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login page-1</title>
+    <link rel="stylesheet" media="screen and (min-width: 1024px)" href="{% static 'loginpage-1.css' %}">
+    <link rel="stylesheet" media="screen and (max-width: 1024px)" href="{% static 'loginpage-11024.css' %}">
+    <link rel="stylesheet" media="screen and (max-width: 768px)" href="{% static 'loginpage-1768.css' %}">
+    <style>
+        .kakao {
+        top: 15px;
+        left: 60px;
+        width: 30px;
+        height: 24px;
+        background: transparent url('{% static "img/kakao\ 2.png" %}') 0% 0% no-repeat padding-box;
+        opacity: 1;
+        position: absolute;
+    }
+        .google {
+        top: 14px;
+        left: 80px;
+        width: 30px;
+        height: 27px;
+        background: transparent url('{% static "img/google.png" %}') 0% 0% no-repeat padding-box;
+        opacity: 1;
+        position: absolute;
+    }
+    .facebook {
+    top: 12px;
+    left: 60px;
+    width: 30px;
+    height: 24px;
+    background: transparent url('{% static "img/facebook.png" %}') 0% 0% no-repeat padding-box;
+    opacity: 1;
+    position: absolute;
+    }
+    </style>
+</head>
+
+<body class="body">
+    {% load socialaccount %}
+    {% providers_media_js %}
+    <div class="box">
+        <p class="login">로그인</p>
+
+        <div>
+            <a class="yellow" href="{% provider_login_url 'kakao' %}">
+                <div class="kakao"></div>
+                <div class="kakaotext">
+                    <p>카카오톡으로 로그인</p>
+                </div>
+            </a>
+        </div>
+        <div>
+            <a class="blue" href="{% provider_login_url 'facebook' %}">
+                <div class="facebook"></div>
+                <div class="facebooktext">
+                    <p>페이스북으로 로그인</p>
+                </div>
+            </a>
+        </div>
+        <div>
+            <a class="gray" href="{% provider_login_url 'google' %}">
+                <div class="google"></div>
+                <div class="googletext">
+                    <p>구글로 로그인</p>
+                </div>
+            </a>
+        </div>
+        <p class="small">회원가입</p>
+        <div class="line"></div>
+        <p class="small2">이메일 로그인</p>
+    </div>
+</body>
+
+</html>

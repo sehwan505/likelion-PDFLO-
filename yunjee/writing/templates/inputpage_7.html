@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF등록하기::PDFLO</title>
+    <link rel="stylesheet" href="../css/inputpage_00.css">
+    <link rel="stylesheet" href="../css/inputpage_7.css">
+
+
+</head>
+
+<body>
+    <div class="fullbox">
+        <div class="status_bar_area">
+            <div class="status_bar_area_in">
+                <div class="statusbar_margin"></div>
+                <progress value="100" max="100"></progress>
+                <div class="statusbar_margin"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="container_in">
+                <div class="index">
+                    <div class="index_text">
+                        <h1 class="index_title">계좌 설정</h1>
+                        <div class="index_subtitlebox">
+                            <a class="index_subtitle" href="">PDF 자료 개요</a>
+                            <img class="circle" src="../../img/circle_1.svg" alt="완료">
+                        </div>
+                        <div class="index_subtitlebox">
+                            <a class="index_subtitle" href="">셀러 정보 개요</a>
+                            <img class="circle" src="../../img/circle_1.svg" alt="완료">
+
+                        </div>
+                    </div>
+                    <div class="index_text">
+                        <h1 class="index_title">스토리</h1>
+                        <div class="index_subtitlebox">
+                            <a class="index_subtitle" href="">창작 스토리</a>
+                            <img class="circle" src="../../img/circle_1.svg" alt="완료">
+
+                        </div>
+                        <div class="index_subtitlebox">
+                            <a class="index_subtitle" href="">셀러 스토리</a>
+                            <img class="circle" src="../../img/circle_1.svg" alt="완료">
+
+                        </div>
+                    </div>
+                    <div class="index_text">
+                        <h1 class="index_title">PDF자료</h1>
+                        <div class="index_subtitlebox">
+                            <a class="index_subtitle" href="">PDF 목차</a>
+                            <img class="circle" src="../../img/circle_1.svg" alt="완료">
+
+                        </div>
+                        <div class="index_subtitlebox">
+                            <a class="index_subtitle" href="">PDF 미리보기/업로드</a>
+                            <img class="circle" src="../../img/circle_1.svg" alt="완료">
+
+                        </div>
+                    </div>
+                    <div class="index_text">
+                        <h1 class="index_title">계좌 설정</h1>
+                        <div class="index_subtitlebox_on">
+                            <a class="index_subtitle" href="">계좌 설정</a>
+                            <img class="circle" src="../../img/circle_1.svg" alt="미완료">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="inputarea">
+                    <div class="inputarea_in">
+                        <h1 class="input_title">계좌 설정</h1>
+                        <div class="inputbox_out">
+                            <p class="p_bold">본인 인증</p>
+                            <p class="p_sub">본인 인증 판매금액을 지급 받으실 셀러 개인정보를 인증해주세요.</p>
+                            <div class="inputbox">
+                                <div class="inputbox">
+                                    <p>연락처 </p>
+                                    <form action="">
+                                        <input class="textbox2" type="tel" pattern="[0-9]{11}" minlength="9"
+                                            maxLength="13" placeholder="ex.01098765432">
+                                        <input type="submit" value="인증하기" class="bt_confirm" />
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="inputbox_out">
+
+                            <p class="p_bold">계좌 입력</p>
+                            <p class="p_sub">본인 인증 판매금액을 지급 받으실 셀러 개인정보를 인증해주세요.</p>
+
+                            <div class="inputbox_flex">
+
+                                <div>
+                                    <p class="p_nonmargin">예금주명</p>
+                                    <input class="textbox4" type="text" minlength="1" placeholder="예금주명을 입력하세요">
+                                </div>
+                                <div class="page_margin">
+                                    <p class="p_nonmargin">예금주 생년월일</p>
+                                    <input class="textbox5" type="text" minlength="1" placeholder="ex.900101">
+                                </div>
+                            </div>
+
+                            <div class="inputbox">
+                                <p>계좌번호</p>
+                                <div class="category_box">
+                                    <select class="textbox2" name="category" id="">
+                                        <option value="">은행을 선택하세요</option>
+                                        <option value="실무">국민은행</option>
+                                        <option value="실무">우리은행</option>
+                                        <option value="실무">신한은행</option>
+                                        <option value="실무">농협</option>
+                                        <option value="실무">카카오뱅크</option>
+                                    </select>
+                                    <input class="textbox3" type="text" minlength="1" maxLength="6"
+                                        placeholder="계좌번호를 입력하세요">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="inputbox">
+
+                            <p>통장 사본 업로드 </p>
+
+                            <div class="inputbox_flex">
+
+                                <div class="informbox">
+                                    <p class="inform_text">10MB 이하로만 등록 가능 합니다. (jpg, jpeg, png, pdf)</p>
+                                </div>
+
+                                <div>
+                                    <button class="bt_upload" type="button">업로드</button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="buttonarea">
+                            <button class="bt_prev" type="button">이전</button>
+                            <button class="bt_next" type="button">제출</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

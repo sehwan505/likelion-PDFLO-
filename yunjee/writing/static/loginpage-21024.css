@@ -1,0 +1,145 @@
+.body {
+    top: -25px;
+    left: -19px;
+    height: 1138px;
+    background: #F5F5F5 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    opacity: 1;
+    position: absolute;
+}
+
+.box {
+    top: 200px;
+    left: 310px;
+    width: 380px;
+    height: 430px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 2px 2px 14px #00000029;
+    border-radius: 20px;
+    opacity: 1;
+    position: absolute;
+}
+
+
+.login {
+    top: 35px;
+    left: 155px;
+    width: 80px;
+    height: 29px;
+    font: var(--unnamed-font-weight-bold) var(--unnamed-font-size-24)/var(--unnamed-line-spacing-33) var(--unnamed-font-family-noto-sans);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-313131);
+    text-align: center;
+    font: bold 18px/33px Noto Sans;
+    letter-spacing: 0px;
+    color: #313131;
+    opacity: 1;
+    position: absolute;
+}
+
+.small {
+    top: 351px;
+    left: 96px;
+    width: 100px;
+    height: 17px;
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-19) var(--unnamed-font-family-noto-sans);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-9f9f9f);
+    text-align: center;
+    font: normal normal normal 12px/19px Noto Sans;
+    letter-spacing: 0px;
+    color: #9F9F9F;
+    opacity: 1;
+    position: absolute;
+}
+
+.line {
+    top: 365px;
+    left: 198px;
+    width: 0px;
+    height: 12px;
+    border: 0.3px solid #9F9F9F;
+    background-color: #9F9F9F;
+    opacity: 1;
+    position: absolute;
+}
+
+.small2 {
+    top: 351px;
+    left: 178px;
+    width: 120px;
+    height: 17px;
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-19) var(--unnamed-font-family-noto-sans);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-9f9f9f);
+    text-align: center;
+    font: normal normal normal 12px/19px Noto Sans;
+    letter-spacing: 0px;
+    color: #9F9F9F;
+    opacity: 1;
+    position: absolute;
+}
+
+.mailadress {
+    top: 140px;
+    left: 40px;
+    width: 305px;
+    height: 45px;
+    border: 1px solid var(--unnamed-color-c7c7c7);
+    border: 1px solid #C7C7C7;
+    border-radius: 100px;
+    opacity: 1;
+    position: absolute;
+
+
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-19) var(--unnamed-font-family-noto-sans);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-9f9f9f);
+    text-align: left;
+    font: normal normal normal 14px/19px Noto Sans;
+    letter-spacing: 0px;
+    color: #9F9F9F;
+    opacity: 1;
+}
+
+.password {
+    top: 200px;
+    left: 40px;
+    width: 305px;
+    height: 45px;
+    border: 1px solid var(--unnamed-color-c7c7c7);
+    border: 1px solid #C7C7C7;
+    border-radius: 100px;
+    opacity: 1;
+    position: absolute;
+
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-19) var(--unnamed-font-family-noto-sans);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-9f9f9f);
+    text-align: left;
+    font: normal normal normal 14px/19px Noto Sans;
+    letter-spacing: 0px;
+    color: #9F9F9F;
+    opacity: 1;
+}
+
+.submit {
+    top: 305px;
+    left: 40px;
+    width: 305px;
+    height: 45px;
+    background: var(--unnamed-color-e84949) 0% 0% no-repeat padding-box;
+    background: #E84949 0% 0% no-repeat padding-box;
+    border-radius: 100px;
+    opacity: 1;
+    position: absolute;
+    border: transparent;
+
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-bold) var(--unnamed-font-size-18)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-noto-sans);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: center;
+    font: normal normal bold 16px/24px Noto Sans;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF등록하기::PDFLO</title>
+    <link rel="stylesheet" href="{% static 'inputpage_00.css' %}">
+    <link rel="stylesheet" href="{% static 'inputpage_3.css' %}">
+
+
+</head>
+
+<body>
+    <div class="fullbox">
+        <div class="status_bar_area">
+            <div class="status_bar_area_in">
+                <div class="statusbar_margin"></div>
+                <progress value="42" max="100"></progress>
+                <div class="statusbar_margin"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="container_in">
+                <div class="index">
+                    <div class="index_text">
+                        <h1 class="index_title">기본 정보</h1>
+                        <div class="index_subtitlebox">
+                            <a class="index_subtitle" href="">PDF 자료 개요</a>
+                            <img class="circle" src="{% static 'img/circle_1.svg' %}" alt="완료">
+                        </div>
+                        <div class="index_subtitlebox">
+                            <a class="index_subtitle" href="">셀러 정보 개요</a>
+                            <img class="circle" src="{% static 'img/circle_1.svg' %}" alt="완료">
+
+                        </div>
+                    </div>
+                    <div class="index_text">
+                        <h1 class="index_title">스토리</h1>
+                        <div class="index_subtitlebox">
+                            <a class="index_subtitle_on" href="">창작 스토리</a>
+                            <img class="circle" src="{% static 'img/circle_1.svg' %}" alt="완료">
+
+                        </div>
+                        <div class="index_subtitlebox">
+                            <a class="index_subtitle" href="">셀러 스토리</a>
+                            <img class="circle" src="{% static 'img/circle_2.svg' %}" alt="미완료">
+
+                        </div>
+                    </div>
+                    <div class="index_text">
+                        <h1 class="index_title">PDF 자료</h1>
+                        <div class="index_subtitlebox">
+                            <a class="index_subtitle" href="">PDF 목차</a>
+                            <img class="circle" src="{% static 'img/circle_2.svg' %}" alt="미완료">
+
+                        </div>
+                        <div class="index_subtitlebox">
+                            <a class="index_subtitle" href="">PDF 미리보기/업로드</a>
+                            <img class="circle" src="{% static 'img/circle_2.svg' %}" alt="미완료">
+
+                        </div>
+                    </div>
+                    <div class="index_text">
+                        <h1 class="index_title">계좌 설정</h1>
+                        <div class="index_subtitlebox">
+                            <a class="index_subtitle" href="">계좌 설정</a>
+                            <img class="circle" src="{% static 'img/circle_2.svg' %}" alt="미완료">
+                        </div>
+                    </div>
+                </div>
+                <div class="inputarea">
+                    <div class="inputarea_in">
+                        <form action="{% url 'create' 4 %}" method="post" enctype="multipart/form-data" id="form">
+                        {% csrf_token %}
+                        <input type="hidden" value="{{blog_id}}" name="id">
+                        <h1 class="input_title">창작 스토리</h1>
+                        <div class="inputbox">
+                            <div>
+                                <p>1. PDF 주제 소개: 어떤 자료인가요?</p>
+                                <input class="textbox1" type="text" minlength="1" maxLength="20"
+                                    placeholder="PDF 주제를 요약해 설명해주세요. (ex.세상에 단 하나뿐인 디자인 모음집을 소개합니니다)" name="pdf_subject1">
+                                <textarea class="textbox3" name="pdf_subject2" form="form" minlength="20"
+                                    placeholder="PDF 주제에 대해 설명해주세요."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="inputbox">
+                            <div>
+                                <p>2. 창작 배경 및 계기: 어떻게 PDF 자료를 만들게 되었나요?</p>
+                                <input class="textbox1" type="text" minlength="1" maxLength="20"
+                                    placeholder="창작 배경 및 계기를 요약해 설명해주세요. (ex.왜 디자이너는 매번 일일히 자료를 찾아야하는걸까?)" name="pdf_why1">
+                                <textarea class="textbox3" form="form" minlength="20"
+                                    placeholder="창작 배경 및 계기에 대해 설명해주세요." name="pdf_why2"></textarea>
+                            </div>
+                        </div>
+                        <div class="inputbox">
+                            <div>
+                                <p>3. 내 PDF 자료만의 특징: 다른 정보들과 차별화되는 내 자료만의 장점은 무엇인가요?</p>
+                                <input class="textbox1" type="text" minlength="1" maxLength="20"
+                                    placeholder="내 PDF 자료만의 차별점을 요약해 설명해주세요. (ex. 학원비 20만원? 단 돈 2만원 자료로 다 얻어가자!)" name="pdf_spec1">
+                                <textarea class="textbox3" name="pdf_spec2" form="form" minlength="20"
+                                    placeholder="내 PDF 자료만의 차별점에 대해 설명해주세요."></textarea>
+                            </div>
+                        </div><div class="buttonarea">
+                            <button class="bt_prev" type="button">이전</button>
+                            <button class="bt_next" type="submit" form="form">다음</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

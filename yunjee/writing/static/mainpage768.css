@@ -1,0 +1,353 @@
+.red {
+    top: 80px;
+    left: -15px;
+    width: 1550px;
+    height: 320px;
+    border: 1px solid var(--unnamed-color-c7c7c7);
+    background: transparent url('img/red.png') 0% 0% no-repeat padding-box;
+    border: 1px solid #C7C7C7;
+    opacity: 1;
+    position: absolute;
+}
+
+.text1 {
+    top: 50px;
+    left: 250px;
+    width: 372px;
+    height: 100px;
+    font: Bold 30px/40px var(--unnamed-font-family-noto-sans);
+    text-align: center;
+    font: Bold 30px/40px Noto Sans;
+    letter-spacing: -1.52px;
+    color: #FFFFFF;
+    text-shadow: 0px 0px 50px #00000080;
+    opacity: 1;
+    position: absolute;
+}
+
+.text2 {
+    top: 170px;
+    left: 250px;
+    width: 372px;
+    height: 24px;
+    font: Regular var(--unnamed-font-size-18)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-noto-sans);
+    text-align: center;
+    font: Regular 18px/24px Noto Sans;
+    font-size: 15px;
+    letter-spacing: -0.36px;
+    color: #FFFFFF;
+    text-shadow: 0px 0px 30px #000000B2;
+    opacity: 1;
+    position: absolute;
+}
+
+
+.search {
+    top: 260px;
+    left: 370px;
+    font: Regular var(--unnamed-font-size-10)/var(--unnamed-line-spacing-18) var(--unnamed-font-family-noto-sans);
+    text-align: center;
+    font: Regular 10px/18px Noto Sans;
+    font-size: 15px;
+    letter-spacing: -0.32px;
+    color: #535353;
+    opacity: 1;
+    position: absolute;
+    width: 104px;
+    height: 34px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-radius: 100px;
+    border: white;
+    opacity: 1;
+}
+
+.pdf {
+  
+    width: 1000px;
+    height: 200px;
+    opacity: 1;
+
+}
+
+.text3 {
+    top: 200px;
+    left: 10px;
+    width: 330px;
+    height: 41px;
+    font: normal Bold var(--unnamed-font-size-25)/var(--unnamed-line-spacing-41) var(--unnamed-font-family-noto-sans);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-313131);
+    text-align: left;
+    font: normal Bold 25px/41px Noto Sans;
+    letter-spacing: 0px;
+    color: #313131;
+    opacity: 1;
+    position: absolute;
+}
+
+.text4 {
+    top: 250px;
+    left: 10px;
+    width: 400px;
+    height: 27px;
+    font: Regular var(--unnamed-font-size-6)/var(--unnamed-line-spacing-12) var(--unnamed-font-family-noto-sans);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-9f9f9f);
+    text-align: left;
+    font: Regular 6px/12px Noto Sans;
+    letter-spacing: 0px;
+    color: #9F9F9F;
+    opacity: 1;
+    position: absolute;
+}
+
+.img1 {
+    
+    width: 350px;
+    height: 250px;
+    background: transparent url('img/fountain-pen-1854169_1920-1.png') 0% 0% no-repeat padding-box;
+    border: 1px solid #E0E0E0;
+    border-radius: 18px;
+    opacity: 1;
+}
+
+.filledheart {
+    top: 20px;
+    left: 24px;
+    width: 28px;
+    height: 28px;
+    background: transparent url('img/heart-pick.png') 0% 0% no-repeat padding-box;
+    border: transparent;
+    opacity: 1;
+    position: absolute;
+}
+
+.unfilledheart {
+    top: 20px;
+    left: 24px;
+    width: 28px;
+    height: 28px;
+    background: transparent url('img/heart-nonpick.png') 0% 0% no-repeat padding-box;
+    border: transparent;
+    opacity: 1;
+    position: absolute;
+}
+
+.img1-1 {
+
+
+    text-align: left;
+    font: SemiBold var(--unnamed-font-size-15)/var(--unnamed-line-spacing-30) var(--unnamed-font-family-noto-sans);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-535353);
+    font: bold 15px/30px Noto Sans;
+    letter-spacing: 0px;
+    color: #535353;
+    opacity: 1;
+    margin: 15px;
+    position: relative;
+}
+
+.img1-2 {
+    top: 280px;
+    width: 400px;
+    height: 22px;
+    font: var(--unnamed-font-size-15)/var(--unnamed-line-spacing-15) var(--unnamed-font-family-noto-sans);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-9f9f9f);
+    text-align: left;
+    font:  15px/15px Noto Sans;
+    letter-spacing: 0px;
+    color: #9F9F9F;
+    opacity: 1;
+    position: absolute;
+}
+
+.img1-3 {
+    top: 320px;
+    width: 48px;
+    height: 20px;
+    background: var(--unnamed-color-c7c7c7) 0% 0% no-repeat padding-box;
+    background: #C7C7C7 0% 0% no-repeat padding-box;
+    border-radius: 100px;
+    opacity: 1;
+    position: absolute;
+
+    font: Regular var(--unnamed-font-size-12)/var(--unnamed-line-spacing-19) var(--unnamed-font-family-noto-sans);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: left;
+    font: Regular 12px/19px Noto Sans;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+.img1-4 {
+    top: 320px;
+    left: 60px;
+    width: 63px;
+    height: 20px;
+    font: Regular var(--unnamed-font-size-12)/var(--unnamed-line-spacing-19) var(--unnamed-font-family-noto-sans);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: left;
+    font: Regular 12px/19px Noto Sans;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+
+    background: var(--unnamed-color-c7c7c7) 0% 0% no-repeat padding-box;
+    background: #C7C7C7 0% 0% no-repeat padding-box;
+    border-radius: 100px;
+    opacity: 1;
+    position: absolute;
+}
+
+
+.img2 {
+    top: 300px;
+    left: 370px;
+    width: 350px;
+    height: 250px;
+    background: transparent url('img/piggy-bank-968302_1920.png') 0% 0% no-repeat padding-box;
+    border: 1px solid #E0E0E0;
+    border-radius: 18px;
+    opacity: 1;
+    position: absolute;
+}
+
+
+
+
+
+.img3 {
+    top: 300px;
+    left: 730px;
+    width: 350px;
+    height: 250px;
+    background: transparent url('img/stock-market-2616931_1920.png') 0% 0% no-repeat padding-box;
+    border: 1px solid #E0E0E0;
+    border-radius: 18px;
+    opacity: 1;
+    position: absolute;
+}
+
+
+
+.pdf2 {
+    top: 900px;
+    left: 0px;
+    width: 1170px;
+    height: 120px;
+    background: transparent url('img/noname-1.png') 0% 0% no-repeat padding-box;
+    opacity: 1;
+    position: absolute;
+}
+
+.pdf2-1 {
+    left: 50px;
+    width: 300px;
+    height: 38px;
+    font: normal SemiBold 25px/35px var(--unnamed-font-family-noto-sans);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-313131);
+    text-align: left;
+    font:normal Bold 25px/35px Noto Sans;
+    letter-spacing: 0px;
+    color: #313131;
+    opacity: 1;
+    position: absolute;
+}
+
+.pdf2-2 {
+    top: 50px;
+    left: 50px;
+    width: 380px;
+    height: 24px;
+    font: Regular var(--unnamed-font-size-18)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-noto-sans);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-9f9f9f);
+    text-align: left;
+    font: Regular 18px/24px Noto Sans;
+    letter-spacing: 0px;
+    color: #9F9F9F;
+    opacity: 1;
+    position: absolute;
+}
+
+.pdf3 {
+    top: 1050px;
+    left: 10px;
+    width: 1000px;
+    height: 200px;
+    opacity: 1;
+    position: absolute;
+}
+
+.pdf3-1 {
+    left: 10px;
+    width: 330px;
+    height: 41px;
+    font: Bold var(--unnamed-font-size-25)/var(--unnamed-line-spacing-41) var(--unnamed-font-family-noto-sans);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-313131);
+    text-align: left;
+    font: Bold 25px/41px Noto Sans;
+    letter-spacing: 0px;
+    color: #313131;
+    opacity: 1;
+    position: absolute;
+}
+
+.img4 {
+    top: 100px;
+    left: 10px;
+    width: 350px;
+    height: 250px;
+    background: transparent url('img/namecard1.png') 0% 0% no-repeat padding-box;
+    border: 1px solid #E0E0E0;
+    border-radius: 18px;
+    opacity: 1;
+    position: absolute;
+}
+
+
+
+.img5 {
+    top: 100px;
+    left: 370px;
+    width: 350px;
+    height: 250px;
+    background: transparent url('img/home-office-599475_1920.png') 0% 0% no-repeat padding-box;
+    border: 1px solid #E0E0E0;
+    border-radius: 18px;
+    opacity: 1;
+    position: absolute;
+
+}
+
+
+.img6{
+    top: 100px;
+    left: 730px;
+    width: 350px;
+    height: 250px;
+    background: transparent url('img/home-office-599475_1920.png') 0% 0% no-repeat padding-box;
+    border: 1px solid #E0E0E0;
+    border-radius: 18px;
+    opacity: 1;
+    position: absolute;
+}
+
+
+
+.bottom {
+    top: 1600px;
+    left: 0px;
+    width: 1550px;
+    height: 200px;
+    border: 1px solid var(--unnamed-color-c7c7c7);
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #C7C7C7;
+    opacity: 1;
+    position: absolute;
+}

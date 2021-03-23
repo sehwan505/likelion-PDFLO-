@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF등록하기::PDFLO</title>
+    <link rel="stylesheet" href="{% static 'inputpage_00.css' %}">
+    <link rel="stylesheet" href="{% static 'inputpage_1.css' %}">
+
+</head>
+
+<body>
+    <div class="fullbox">
+        <div class="status_bar_area">
+            <div class="status_bar_area_in">
+                <div class="statusbar_margin"></div>
+                <progress value="14" max="100"></progress>
+                <div class="statusbar_margin"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="container_in">
+                <div class="index">
+                    <div class="index_text">
+                        <h1 class="index_title">기본 정보</h1>
+                        <div class="index_subtitlebox">
+                            <a class="index_subtitle_on" href="">PDF 자료 개요</a>
+                            <img class="circle" src="{% static 'img/circle_1.svg' %}" alt="완료">
+                        </div>
+                        <div class="index_subtitlebox">
+                            <a class="index_subtitle" href="">셀러 정보 개요</a>
+                            <img class="circle" src="{% static 'img/circle_2.svg' %}" alt="미완료">
+
+                        </div>
+                    </div>
+                    <div class="index_text">
+                        <h1 class="index_title">스토리</h1>
+                        <div class="index_subtitlebox">
+                            <a class="index_subtitle" href="">창작 스토리</a>
+                            <img class="circle" src="{% static 'img/circle_2.svg' %}" alt="미완료">
+
+                        </div>
+                        <div class="index_subtitlebox">
+                            <a class="index_subtitle" href="">셀러 스토리</a>
+                            <img class="circle" src="{% static 'img/circle_2.svg' %}" alt="미완료">
+
+                        </div>
+                    </div>
+                    <div class="index_text">
+                        <h1 class="index_title">PDF 자료</h1>
+                        <div class="index_subtitlebox">
+                            <a class="index_subtitle" href="">PDF 목차</a>
+                            <img class="circle" src="{% static 'img/circle_2.svg' %}" alt="미완료">
+
+                        </div>
+                        <div class="index_subtitlebox">
+                            <a class="index_subtitle" href="">PDF 미리보기/업로드</a>
+                            <img class="circle" src="{% static 'img/circle_2.svg' %}" alt="미완료">
+
+                        </div>
+                    </div>
+                    <div class="index_text">
+                        <h1 class="index_title">계좌 설정</h1>
+                        <div class="index_subtitlebox">
+                            <a class="index_subtitle" href="">계좌 설정</a>
+                            <img class="circle" src="{% static 'img/circle_2.svg' %}" alt="미완료">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="inputarea">
+                    <div class="inputarea_in">
+                        <form action="{% url 'create' 2 %}" method="post" enctype="multipart/form-data" id="form">
+                        {% csrf_token %}
+                        <h1 class="input_title">PDF 자료 개요</h1>
+                        <div class="inputbox">
+                            <p>PDF 제목</p>
+                            <input class="textbox1" type="text" minlength="5" maxLength="18"
+                                placeholder="PDF 자료를 한 마디로 정리해줄 수 있는 제목을 적어주세요." name="title">
+                        </div>
+                        <div class="inputbox">
+                            <p>PDF 한줄 설명</p>
+                            <input class="textbox1" type="text" minlength="5" maxLength="39"
+                                placeholder="PDF 자료의 요점을 한 줄로 요약해 설명해주세요." name="one_line">
+                        </div>
+                        <div class="inputbox">
+                            <p>카테고리 </p>
+                            <div class="category_box">
+                                <select class="textbox2" name="category" id="">
+                                    <option value="실무">실무</option>
+                                    <option value="실무">취미</option>
+                                    <option value="실무">재테크</option>
+                                    <option value="실무">꿀팁</option>
+                                    <option value="실무">기타</option>
+                                </select>
+                                <input class="textbox3" type="text" minlength="1" maxLength="6"
+                                    placeholder="상세 카테고리를 자유롭게 입력해주세요.">
+                            </div>
+                        </div>
+                        <div class="inputbox_flex">
+                            <div>
+                                <p>가격</p>
+                                <input class="textbox4" type="text" minlength="1" placeholder="10,000" name="money">
+                            </div>
+                            <div class="page_margin">
+                                <p>페이지 수</p>
+                                <input class="textbox5" type="text" minlength="1" placeholder="60" name="page">
+                            </div>
+                        </div>
+                        <div class="inputbox">
+                            <p>커버 이미지</p>
+                            <div class="imagebox">
+                                <div class="image_subj">
+                                    <input class="image_bt" type="file" accept="image/*" src="{% static 'img/input.svg' %}"  name="image">
+                                    <p class="smalltext">파일 형식은 jpg 또는 png로, <br>
+                                        사이즈는 가로 1,240px, 세로 930px 이상으로 올려주세요.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonarea">
+                            <button class="bt_next" type="submit" form="form">다음</button>
+                        </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

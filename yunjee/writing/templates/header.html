@@ -1,0 +1,72 @@
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'background.css' %}">
+    <link rel="stylesheet" href="{% static 'header.css' %}">
+    <!-- 부트스트랩 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+
+    </style>
+
+</head>
+{% load socialaccount %}
+{% providers_media_js %}
+<div class="headerContainer">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/"><img src="{% static 'img/logo.svg' %}" class="logo" alt="로고사진입니다"></a></li>
+                <li>
+                    <div class="searchingBox">
+                        <form action="" class="searching d-flex align-items-center">
+                            <input type="text" placeholder="필요한 지식을 검색해보세요">
+                            <input type="submit" value="">
+                        </form>
+                    </div>
+                </li>
+                <li>
+                    <div class="profile">
+                        {% if account.profile_photo %}
+                        <div class="box"><a href="/profile" ><img class="profile_photo" src="{{ account.profile_photo.url }}" alt="프로필사진"></a></div>
+                         <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="/logout">로그아웃</a>
+                                <a class="dropdown-item" href="/profile">프로필</a>
+                                <hr>
+                                <a class="dropdown-item" href="{% url 'create' 1 %}">PDF 등록하기</a>
+                            </div>
+                        </div>
+                        {% else %}
+                        <a href=""><img src="{% static 'img/profile-non.png' %}" alt="프로필사진"></a>
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="/login">로그인</a>
+                                <a class="dropdown-item" href="#">회원 가입</a>
+                                <hr>
+                                <a class="dropdown-item" href="#">PDF 등록하기</a>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- 부트스트랩 -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+    </script>
+</div>

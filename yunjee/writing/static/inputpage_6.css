@@ -1,0 +1,289 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.p_bold {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-bold) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-19) var(--unnamed-font-family-noto-sans);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-313131);
+    text-align: left;
+    font: normal normal bold 16px/19px Noto Sans;
+    letter-spacing: 0px;
+    color: #313131;
+}
+
+.p_sub {
+    margin: 0px 0px 21px 0px;
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-19) var(--unnamed-font-family-noto-sans);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-9f9f9f);
+    text-align: left;
+    font: normal normal normal 14px/19px Noto Sans;
+    letter-spacing: 0px;
+    color: #9F9F9F;
+}
+
+.eximg {
+    display: flex;
+    margin-bottom: 46px;
+
+}
+
+.eximg_detail {
+    width: 138px;
+    height: 90px;
+    /* UI Properties */
+    background: transparent url('https://tumblbug-pci.imgix.net/3aabb8903a333a5269d8d02892d695554d8a53f1/2ae5709939d3487e9775bedc3784dd2af827cd2e/e911411559bb94ffc029c29e1ce2be6d5db0c1b7/c3216017-1fba-41fe-9caa-74e727c3867b.jpg?ixlib=rb-1.1.0&w=1240&h=930&auto=format%2Ccompress&lossless=true&fit=crop&s=06bf28cb9d5daa21d6e18a9f84a573c4') 0% 0% no-repeat padding-box;
+    background-size: 140px;
+    border: 1px solid #E0E0E0;
+    border-radius: 6px;
+    opacity: 1;
+    margin: 20px 10px 0px 0px;
+}
+
+.informbox {
+    width: 558px;
+    height: 38px;
+    /* UI Properties */
+    background: #F5F5F5 0% 0% no-repeat padding-box;
+    border-radius: 6px;
+    opacity: 1;
+    padding: 15px 16px;
+    margin: 18px 0px 0px 0px;
+}
+
+.inform_text {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-19) var(--unnamed-font-family-noto-sans);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-535353);
+    text-align: left;
+    font: normal normal normal 14px/19px Noto Sans;
+    letter-spacing: 0px;
+    color: #535353;
+    opacity: 1;
+    margin: 0px;
+}
+
+.bt_upload {
+    width: 180px;
+    height: 44px;
+    /* UI Properties */
+    background: var(--unnamed-color-e84949) 0% 0% no-repeat padding-box;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    border-radius: 6px;
+    opacity: 1;
+    border: 1px solid #E84949;
+
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-22) var(--unnamed-font-family-noto-sans);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: center;
+    font: normal normal normal 14px/22px Noto Sans;
+    letter-spacing: 0px;
+    color: #E84949;
+    opacity: 1;
+    margin: 14px 0px 0px 0px;
+}
+
+
+.delete {
+    position: absolute;
+}
+
+.delete_bt {
+    position: relative;
+    top: -4px;
+    left: 123px;
+
+}
+
+.textbox1 {
+    width: 420px;
+    height: 44px;
+
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #E0E0E0;
+    border-radius: 6px;
+    opacity: 1;
+    padding: 0px 14px 0px 14px;
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-19) var(--unnamed-font-family-noto-sans);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-c7c7c7);
+    text-align: left;
+    font: normal normal normal 13px/19px Noto Sans;
+    letter-spacing: 0px;
+    color: #535353;
+    opacity: 1;
+}
+
+.textbox1::placeholder {
+    color: #C7C7C7;
+    ;
+}
+
+.textbox2::placeholder {
+    color: #C7C7C7;
+    ;
+}
+
+.textbox3::placeholder {
+    color: #C7C7C7;
+    ;
+}
+
+.textbox4::placeholder {
+    color: #C7C7C7;
+    ;
+}
+
+.textbox5::placeholder {
+    color: #C7C7C7;
+    ;
+}
+
+
+.textbox2 {
+    width: 170px;
+    height: 48px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #E0E0E0;
+    border-radius: 6px;
+    opacity: 1;
+    padding: 0px 14px 0px 14px;
+
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-19) var(--unnamed-font-family-noto-sans);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-535353);
+    text-align: left;
+    font: normal normal normal 13px/19px Noto Sans;
+    letter-spacing: 0px;
+    color: #535353;
+    opacity: 1;
+
+}
+
+.textbox3 {
+    width: 236px;
+    height: 44px;
+    margin-left: 10px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #E0E0E0;
+    border-radius: 6px;
+    opacity: 1;
+    padding: 0px 14px 0px 14px;
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-19) var(--unnamed-font-family-noto-sans);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-c7c7c7);
+    text-align: left;
+    font: normal normal normal 13px/19px Noto Sans;
+    letter-spacing: 0px;
+    color: #535353;
+    opacity: 1;
+
+}
+
+.textbox4 {
+    width: 120px;
+    height: 44px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #E0E0E0;
+    border-radius: 6px;
+    opacity: 1;
+    padding: 0px 14px 0px 14px;
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-19) var(--unnamed-font-family-noto-sans);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-c7c7c7);
+    text-align: left;
+    font: normal normal normal 13px/19px Noto Sans;
+    letter-spacing: 0px;
+    color: #535353;
+    opacity: 1;
+}
+
+.page_margin {
+    margin-left: 14px;
+
+}
+
+.textbox5 {
+    width: 94px;
+    height: 44px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #E0E0E0;
+    border-radius: 6px;
+    opacity: 1;
+    padding: 0px 14px 0px 14px;
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-19) var(--unnamed-font-family-noto-sans);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-c7c7c7);
+    text-align: left;
+    font: normal normal normal 13px/19px Noto Sans;
+    letter-spacing: 0px;
+    color: #535353;
+    opacity: 1;
+}
+
+
+.inputbox_flex {
+    display: flex;
+}
+
+.imagebox {
+    width: 400px;
+    height: 260px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #E0E0E0;
+    border-radius: 6px;
+    opacity: 1;
+    display: table;
+    text-align: center;
+}
+
+.image_subj {
+    display: table-cell;
+    vertical-align: middle;
+    margin: 0 auto;
+}
+
+.image_bt {
+    display: inline-block;
+}
+
+.smalltext {
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-300) var(--unnamed-font-size-12)/var(--unnamed-line-spacing-17) var(--unnamed-font-family-noto-sans);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-9f9f9f);
+    text-align: center;
+    font: normal normal 300 12px/17px Noto Sans;
+    letter-spacing: 0px;
+    color: #9F9F9F;
+    opacity: 1;
+}
+
+
+.bt_next {
+    width: 88px;
+    height: 48px;
+    background: var(--unnamed-color-e84949) 0% 0% no-repeat padding-box;
+    background: #E84949 0% 0% no-repeat padding-box;
+    border-radius: 30px;
+    opacity: 1;
+    border: 0px;
+    margin: 64px 0px 0px 0px;
+
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-bold) var(--unnamed-font-size-20)/var(--unnamed-line-spacing-27) var(--unnamed-font-family-noto-sans);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: center;
+    font: normal normal bold 18px/27px Noto Sans;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+}
+@media (max-width: 768px) {
+
+    .bt_next {
+        margin: 46px 0px 0px 14px;
+    }
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF등록하기::PDFLO</title>
+    <link rel="stylesheet" href="{% static 'inputpage_00.css' %}">
+    <link rel="stylesheet" href="{% static 'inputpage_6.css' %}">
+
+
+</head>
+
+<body>
+    <div class="fullbox">
+        <div class="status_bar_area">
+            <div class="status_bar_area_in">
+                <div class="statusbar_margin"></div>
+                <progress value="85" max="100"></progress>
+                <div class="statusbar_margin"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="container_in">
+                <div class="index">
+                    <div class="index_text">
+                        <h1 class="index_title">기본 정보</h1>
+                        <div class="index_subtitlebox">
+                            <a class="index_subtitle" href="">PDF 자료 개요</a>
+                            <img class="circle" src="{% static 'img/circle_1.svg' %}" alt="완료">
+                        </div>
+                        <div class="index_subtitlebox">
+                            <a class="index_subtitle" href="">셀러 정보 개요</a>
+                            <img class="circle" src="{% static 'img/circle_1.svg' %}" alt="완료">
+
+                        </div>
+                    </div>
+                    <div class="index_text">
+                        <h1 class="index_title">스토리</h1>
+                        <div class="index_subtitlebox">
+                            <a class="index_subtitle" href="">창작 스토리</a>
+                            <img class="circle" src="{% static 'img/circle_1.svg' %}" alt="완료">
+
+                        </div>
+                        <div class="index_subtitlebox">
+                            <a class="index_subtitle" href="">셀러 스토리</a>
+                            <img class="circle" src="{% static 'img/circle_1.svg' %}" alt="완료">
+
+                        </div>
+                    </div>
+                    <div class="index_text">
+                        <h1 class="index_title">PDF 자료</h1>
+                        <div class="index_subtitlebox">
+                            <a class="index_subtitle_on" href="">PDF 목차</a>
+                            <img class="circle" src="{% static 'img/circle_1.svg' %}" alt="완료">
+
+                        </div>
+                        <div class="index_subtitlebox">
+                            <a class="index_subtitle" href="">PDF 미리보기/업로드</a>
+                            <img class="circle" src="{% static 'img/circle_1.svg' %}" alt="미완료">
+
+                        </div>
+                    </div>
+                    <div class="index_text">
+                        <h1 class="index_title">계좌 설정</h1>
+                        <div class="index_subtitlebox">
+                            <a class="index_subtitle" href="">계좌 설정</a>
+                            <img class="circle" src="{% static 'img/circle_2.svg' %}" alt="미완료">
+                        </div>
+                    </div>
+                </div>
+                <div class="inputarea">
+                    <div class="inputarea_in">
+                         <form action="{% url 'create' 7 %}" method="post" enctype="multipart/form-data" id="form">
+                        {% csrf_token %}
+                        <input type="hidden" value="{{blog_id}}" name="id">
+                        <h1 class="input_title">PDF 자료 개요</h1>
+                        <div class="inputbox">
+                            <p class="p_bold">PDF 미리보기</p>
+                            <p class="p_sub">PDF 미리보기 자료의 일부를 업로드해 구매자들이 자료를 미리 확인할 수 있게 도와주세요</p>
+                            <div class="imagebox">
+                                <div class="image_subj">
+                                    <input class="image_bt" type="image" src="{% static 'img/bt_add02.svg' %}">
+                                    <p class="smalltext">파일 형식은 jpg 또는 png로, <br>
+                                        사이즈는 가로 1,240px, 세로 930px 이상으로 올려주세요.</p>
+                                </div>
+                            </div>
+
+                            <div class="eximg">
+                                <div class="eximg_detail">
+                                    <div class="delete">
+                                        <input class="delete_bt" type="image" src="{% static 'img/bt_delete.svg' %}">
+                                    </div>
+                                </div>
+                                <div class="eximg_detail">
+                                    <div class="delete">
+                                        <input class="delete_bt" type="image" src="{% static 'img/bt_delete.svg' %}">
+                                    </div>
+
+                                </div>
+                                <div class="eximg_detail">
+                                    <div class="delete">
+                                        <input class="delete_bt" type="image" src="{% static 'img/bt_delete.svg' %}">
+                                    </div>
+
+                                </div>
+                                <div class="eximg_detail">
+                                    <div class="delete">
+                                        <input class="delete_bt" type="image" src="{% static 'img/bt_delete.svg' %}">
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                        <div class="inputbox">
+                            <p class="p_bold">PDF 업로드 하기</p>
+                            <div class="informbox">
+                                <p class="inform_text">- PDF 자료를 업로드해주세요.<br>- 자료는 200MB 이하로만 등록 가능합니다.</p>
+                            </div>
+                            <div>
+                                <button class="bt_upload" type="button">PDF업로드 / 수정</button>
+                            </div>
+                        </div>
+                        <div class="buttonarea">
+                            <button class="bt_prev" type="button">이전</button>
+                            <button class="bt_next" type="submit" form="form">다음</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

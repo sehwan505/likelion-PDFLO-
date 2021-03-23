@@ -25,7 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', writing.views.home, name = 'home'),
     path('blog/<int:blog_id>', writing.views.detail, name = 'detail'),
-    path('create/', writing.views.create, name = 'create'),
+    path('create/<int:step>', writing.views.create, name = 'create'),
     path('delete/', writing.views.delete, name = 'delete'),
     path('signup/', login.views.signup, name='signup'),
     path('login/', login.views.login, name='login'),
@@ -40,4 +40,4 @@ urlpatterns = [
 
     
 
-] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF등록하기::PDFLO</title>
+    <link rel="stylesheet" href="{% static 'inputpage_00.css' %}">
+    <link rel="stylesheet" href="{% static 'inputpage_4.css' %}">
+
+
+</head>
+
+<body>
+    <div class="fullbox">
+        <div class="status_bar_area">
+            <div class="status_bar_area_in">
+                <div class="statusbar_margin"></div>
+                <progress value="57" max="100"></progress>
+                <div class="statusbar_margin"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="container_in">
+                <div class="index">
+                    <div class="index_text">
+                        <h1 class="index_title">기본 정보</h1>
+                        <div class="index_subtitlebox">
+                            <a class="index_subtitle" href="">PDF 자료 개요</a>
+                            <img class="circle" src="{% static 'img/circle_1.svg' %}" alt="완료">
+                        </div>
+                        <div class="index_subtitlebox">
+                            <a class="index_subtitle" href="">셀러 정보 개요</a>
+                            <img class="circle" src="{% static 'img/circle_1.svg' %}" alt="완료">
+
+                        </div>
+                    </div>
+                    <div class="index_text">
+                        <h1 class="index_title">스토리</h1>
+                        <div class="index_subtitlebox">
+                            <a class="index_subtitle" href="">창작 스토리</a>
+                            <img class="circle" src="{% static 'img/circle_1.svg' %}" alt="완료">
+
+                        </div>
+                        <div class="index_subtitlebox">
+                            <a class="index_subtitle_on" href="">셀러 스토리</a>
+                            <img class="circle" src="{% static 'img/circle_1.svg' %}" alt="완료">
+
+                        </div>
+                    </div>
+                    <div class="index_text">
+                        <h1 class="index_title">PDF 자료</h1>
+                        <div class="index_subtitlebox">
+                            <a class="index_subtitle" href="">PDF 목차</a>
+                            <img class="circle" src="{% static 'img/circle_2.svg' %}" alt="미완료">
+
+                        </div>
+                        <div class="index_subtitlebox">
+                            <a class="index_subtitle" href="">PDF 미리보기/업로드</a>
+                            <img class="circle" src="{% static 'img/circle_2.svg' %}" alt="미완료">
+
+                        </div>
+                    </div>
+                    <div class="index_text">
+                        <h1 class="index_title">계좌 설정</h1>
+                        <div class="index_subtitlebox">
+                            <a class="index_subtitle" href="">계좌 설정</a>
+                            <img class="circle" src="{% static 'img/circle_2.svg' %}" alt="미완료">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="inputarea">
+                    <div class="inputarea_in">
+                        <form action="{% url 'create' 5 %}" method="post" enctype="multipart/form-data" id="form">
+                        {% csrf_token %}
+                        <input type="hidden" value="{{blog_id}}" name="id">
+                        <h1 class="input_title">셀러 스토리</h1>
+                        <div class="inputbox">
+                            <div>
+                                <p>1. 셀러 이력: 관련 이력을 기입해주세요</p>
+                                <textarea class="textbox3" form="form" name="seller_spec" placeholder="관련 이력을 기입해주세요.
+
+                                    ex.
+                                    - 00대학교 00학과 졸업
+                                    - IT 스타트업 마케터" name="seller_spec"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="inputbox">
+                            <div>
+                                <p>2. 셀러 스토리: 셀러님이 재능 혹은 정보를 얻기 위해 한 노력, 경험 등에 대해 이야기해주세요</p>
+                                <textarea class="textbox3" form="form" name="seller_story" id="textbox3" placeholder="셀러님이 재능 혹은 정보를 얻기 위해 한 노력, 경험 등에 대해 이야기해주세요.
+                                    ex. 저는 스타트업에서 사수없이 2년간 일해왔습니다.
+                                    기초적인 부분도 물어볼 사람 없이 혼자 일을 하다보니 스스로 터득한…"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="buttonarea">
+                            <button class="bt_prev" type="button">이전</button>
+                            <button class="bt_next" type="submit" form="form">다음</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
