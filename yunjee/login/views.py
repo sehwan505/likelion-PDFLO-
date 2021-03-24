@@ -5,6 +5,7 @@ from django.contrib import auth
 from django.views.decorators.csrf import csrf_exempt
 from .models import Account
 from .forms  import ProfileForm
+from django.db.models import Sum
 
 #중복
 from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
@@ -96,9 +97,10 @@ def logout(request):
 
 def profile(request):
     account = Account.objects.get(user=request.user)
+    money_sum = account.like_blog.aggregate(Sum('money'))['money__sum']
 
     return render(request,"mypage.html",
-                              {"account": account})
+                              {"account": account, "money_sum" : money_sum})
 
 @csrf_exempt
 def profile_update(request):

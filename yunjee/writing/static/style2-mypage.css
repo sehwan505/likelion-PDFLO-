@@ -73,18 +73,6 @@
     ;
 }
 
-.img1 {
-    top: 33px;
-    left: 40px;
-    width: 130px;
-    height: 130px;
-    border: 1px solid var(--unnamed-color-9f9f9f);
-    background: transparent url('img/IMG_6133.png') 0% 0% no-repeat padding-box;
-    border: 1px solid #9F9F9F;
-    opacity: 1;
-    position: absolute;
-}
-
 .box1text1 {
     top: -10px;
     left: 150px;
@@ -385,12 +373,11 @@
     top: 80px;
     width: 226px;
     height: 200px;
-    background: transparent url('img/namecard1.png') 0% 0% no-repeat padding-box;
+    background: transparent url('/img/namecard1.png') 0% 0% no-repeat padding-box;
     border: 1px solid #E0E0E0;
     border-radius: 18px;
     opacity: 1;
     position: absolute;
-
 }
 
 .checkbox {

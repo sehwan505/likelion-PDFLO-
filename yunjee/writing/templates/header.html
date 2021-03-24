@@ -27,9 +27,13 @@
                 </li>
                 <li>
                     <div class="profile">
+                        {% if account %}
                         {% if account.profile_photo %}
                         <div class="box"><a href="/profile" ><img class="profile_photo" src="{{ account.profile_photo.url }}" alt="프로필사진"></a></div>
-                         <div class="dropdown">
+                        {% else %}
+                        <a href=""><img src="{% static 'img/profile-non.png' %}" alt="프로필사진"></a>
+                        {% endif %}
+                            <div class="dropdown">
                             <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             </button>
