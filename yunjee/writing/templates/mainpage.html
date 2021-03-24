@@ -45,6 +45,7 @@
         <div class="pdf">
             {% for blog in blogs %}
             <div class="like">
+                <a class="img1-1" href="{% url 'detail' blog.id %}">
                 <div class="img1"></div>
                 <div class="heart">
                     {% if blog in account.like_blog.all %}
@@ -57,9 +58,7 @@
                     </a>
                     {% endif %}
                 </div>
-                </a>
-                <a class="img1-1" href="">
-                    <p>{{blog.title}}</p>
+                <p>{{blog.title}}</p>
                 </a>
                 <p class="img1-2">{{blog.one_line}}</p>
                 <div class="hashtags">
@@ -77,6 +76,7 @@
             <div class="pdf">
                 {% for recommend_blog in recommend_blogs %}
                 <div class="like">
+                    <a class="img1-1" href="{% url 'detail' recommend_blog.id %}">
                     <div class="img1"></div>
                     <div class="heart">
                         {% if recommend_blog in account.like_blog.all %}
@@ -89,9 +89,7 @@
                         </a>
                         {% endif %}
                     </div>
-                    </a>
-                    <a class="img1-1" href="">
-                        <p>{{recommend_blog.title}}</p>
+                    <p>{{recommend_blog.title}}</p>
                     </a>
                     <p class="img1-2">{{recommend_blog.one_line}}</p>
                     <div class="hashtags">

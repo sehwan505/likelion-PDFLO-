@@ -71,20 +71,18 @@ def create(request, step):
         return render(request, 'inputpage_1.html')
 
 def detail(request, blog_id):
-    blog = Blog()
     reviews = Review.objects.filter(blog=blog_id)
-    blog_detail = get_object_or_404(Blog, pk=blog_id)
+    blog = get_object_or_404(Blog, pk=blog_id)
     blog.count += 1
     blog.save()
     account = Account.objects.get(user=request.user)
-    return render(request, 'detail.html', {'blog': blog_detail, 'account': account, 'reviews' : reviews})
+    return render(request, 'detail.html', {'blog': blog, 'account': account, 'reviews' : reviews})
 
 def delete(request):
     del_id = request.GET['blogNum']
     blog = Blog.objects.get(id = del_id)
     blog.delete()
     return redirect('/')
-
 
 def blog_like(request, blog_id):
     blog = get_object_or_404(Blog, id = blog_id)
@@ -103,17 +101,4 @@ def blog_like(request, blog_id):
         blog.like_num += 1
         blog.save()
 
-    return redirect('/', blog_id)
-
-# 좋아요 순으로 내림차순 정렬
-
-def recommend(request):
-    blogs = Blog.objects.all().order_by('-like_num', '-pub_date')
-    return render(request, 'recommend.html', {'blogs':blogs})
-
-
-
-   
-
-    
-
+    return redirect(request.META.get('HTTP_REFERER', '/'))

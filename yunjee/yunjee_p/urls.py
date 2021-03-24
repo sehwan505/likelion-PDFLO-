@@ -32,12 +32,10 @@ urlpatterns = [
     path('logout/', login.views.logout, name='logout'),
     path('accounts/', include('allauth.urls')),
     path('like/<int:blog_id>',writing.views.blog_like, name="like"),
-    path('recommend/',writing.views.recommend,name="recommend"),
-    path('search/', include('search.urls')),
+    path('search/', include('search.urls'), name='search'),
     path('profile/',login.views.profile, name="profile"),
     path('profile_update/',login.views.profile_update),
     path('review/', review.views.review, name = 'review'),
-
-    
+    path('delete_review/<review_id>', review.views.delete_review, name='delete_review'),
 
 ] + static(settings. MEDIA_URL, document_root=settings.MEDIA_ROOT)

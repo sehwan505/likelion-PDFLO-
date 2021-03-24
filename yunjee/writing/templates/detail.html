@@ -6,26 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>세부내용</title>
-
 </head>
-{% extends 'base.html' %}
-
-{% block content %}
-
 <body>
     <form action="{% url 'delete' %}">
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
 
-                <h1>{{blog.title}}</h1>
-                <p>{{blog.money}}</p>
-                <h5>{{blog.one_line}}</h5>
+                <h1>제목 : {{blog.title}}</h1>
+                <p>금액 : {{blog.money}}</p>
+                <h5>한줄 요약 : {{blog.one_line}}</h5>
                 {% if blog.image %}
                 <img src="{{blog.image.url}}" alt="이미지가 없습니다." width="500" height="600">
                 {% endif %}
-                <h5>{{blog.seller}}</h5>
-                <p>{{blog.content}}</p>
-                <p>{{blog.content_list}}</p>
+                <h5>판매자 : {{blog.seller}}</h5>
+                <p>판매자의 한 마디 : {{blog.seller_comment}}</p>
+                <p>목차 : {{blog.content_list}}</p>
                 <br>
                 <br>
                 <a href="{% url 'like' blog.id %}">
@@ -35,11 +30,8 @@
                     좋아요
                     {% endif %}
                 </a>
-
                 <div>좋아요 수 : {{blog.like_num}}</div>
-
                 <br>
-
                 <input type="hidden" id="blogNum" name="blogNum" value="{{ blog.id }}">
                 <a href="{% url 'home' %}">돌아가기</a>
                 <input class="btn btn-dark" type="submit" value="삭제하기">
@@ -49,23 +41,21 @@
 
     {% for review in reviews %}
     <div class="review">
-        <p>작성자 : {{review.review_user}}</p>
-        <p>{{review.review_body}}</p>
+        <table border="1">
+            <th>작성자 : {{review.review_user}}</th>
+            <th>{{review.review_body}}</th>
+            <th><input type="button" value="리뷰 삭제"  onclick="location.href='/delete_review/{{review.id}}'"></th>
+        </table>
     </div>
     {% empty %}
         <p>리뷰가 없습니다.</p>
     {% endfor %}
-
+    <br><br><br>
     <form method="POST" action= "{% url 'review' %}">
         {% csrf_token %}
         <input type="hidden" value="{{blog.id}}" name="blog">
         <input type="text" name="review_body"></input>
         <button type="submit" class="btn btn-secondary">작성</button>
     </form>
-
-
 </body>
-
-{% endblock %}
-
 </html>

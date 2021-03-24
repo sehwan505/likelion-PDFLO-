@@ -19,8 +19,8 @@
                 <li><a href="/"><img src="{% static 'img/logo.svg' %}" class="logo" alt="로고사진입니다"></a></li>
                 <li>
                     <div class="searchingBox">
-                        <form action="" class="searching d-flex align-items-center">
-                            <input type="text" placeholder="필요한 지식을 검색해보세요">
+                        <form action="/search" method="get" class="searching d-flex align-items-center">
+                            <input type="text"  name="q" placeholder="필요한 지식을 검색해보세요">
                             <input type="submit" value="">
                         </form>
                     </div>
@@ -53,8 +53,6 @@
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <a class="dropdown-item" href="/login">로그인</a>
                                 <a class="dropdown-item" href="#">회원 가입</a>
-                                <hr>
-                                <a class="dropdown-item" href="#">PDF 등록하기</a>
                             </div>
                         </div>
                         {% endif %}
