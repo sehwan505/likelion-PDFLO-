@@ -32,7 +32,7 @@
             <p class="text1">외출이 부담스럽다면? <br>집에서 지식얻고 돈도벌고!</p>
             <p class="text2">PDF사이트 신규런칭! 서비스를 자세히 알아보세요</p>
             <div class="more">
-                <form action="more">
+                <form action="more">0
                     <input type="button" value="자세히보기" class="search">
                 </form>
             </div>
@@ -43,57 +43,30 @@
         <p class="text3">오픈 기념 무료 PDF</p>
         <p class="text4">신규 오픈 PDF 한정! 무료 구매 혜택을 드려요.</p>
         <div class="pdf">
+            {% for blog in blogs %}
             <div class="like">
                 <div class="img1"></div>
                 <div class="heart">
-                    <a href="">
+                    {% if blog in account.like_blog.all %}
+                    <a href="{% url 'like' blog.id %}">
+                        <img src="{% static 'img/heart-pick.png' %}" alt="">
+                    </a>
+                    {% else %}
+                    <a href="{% url 'like' blog.id %}">
                         <img src="{% static 'img/heart-nonpick.png' %}" alt="">
                     </a>
+                    {% endif %}
                 </div>
                 </a>
                 <a class="img1-1" href="">
-                    <p>한 번에 합격하는 자소서 꿀팁</p>
+                    <p>{{blog.title}}</p>
                 </a>
-                <p class="img1-2">삼성전자, sk하이닉스 등 대기업 9군데 최초합의 비결</p>
+                <p class="img1-2">{{blog.one_line}}</p>
                 <div class="hashtags">
-                    <a class="hashtag" href="">#실무</a>
-                    <a class="hashtag" href="">#자소서</a>
+                    <a class="hashtag" href="">#{{blog.category}}</a>
                 </div>
             </div>
-            <div class="like">
-                <div class="img1"></div>
-                <div class="heart">
-                    <a href="">
-                        <img src="{% static 'img/heart-nonpick.png' %}" alt="">
-                    </a>
-                </div>
-                </a>
-                <a class="img1-1" href="">
-                    <p>한 번에 합격하는 자소서 꿀팁</p>
-                </a>
-                <p class="img1-2">삼성전자, sk하이닉스 등 대기업 9군데 최초합의 비결</p>
-                <div class="hashtags">
-                    <a class="hashtag" href="">#실무</a>
-                    <a class="hashtag" href="">#자소서</a>
-                </div>
-            </div>
-            <div class="like">
-                <div class="img1"></div>
-                <div class="heart">
-                    <a href="">
-                        <img src="{% static 'img/heart-nonpick.png' %}" alt="">
-                    </a>
-                </div>
-                </a>
-                <a class="img1-1" href="">
-                    <p>한 번에 합격하는 자소서 꿀팁</p>
-                </a>
-                <p class="img1-2">삼성전자, sk하이닉스 등 대기업 9군데 최초합의 비결</p>
-                <div class="hashtags">
-                    <a class="hashtag" href="">#실무</a>
-                    <a class="hashtag" href="">#자소서</a>
-                </div>
-            </div>
+            {% endfor %}
         </div>
         <div class="pdf2">
             <p class="pdf2-1"> PDF로 부수입 만드는 방법</p>
@@ -102,57 +75,30 @@
         <div class="pdf3">
             <p class="pdf3-1">실시간 인기순</p>
             <div class="pdf">
+                {% for recommend_blog in recommend_blogs %}
                 <div class="like">
                     <div class="img1"></div>
                     <div class="heart">
-                        <a href="">
+                        {% if recommend_blog in account.like_blog.all %}
+                        <a href="{% url 'like' recommend_blog.id %}">
+                            <img src="{% static 'img/heart-pick.png' %}" alt="">
+                        </a>
+                        {% else %}
+                        <a href="{% url 'like' recommend_blog.id %}">
                             <img src="{% static 'img/heart-nonpick.png' %}" alt="">
                         </a>
+                        {% endif %}
                     </div>
                     </a>
                     <a class="img1-1" href="">
-                        <p>한 번에 합격하는 자소서 꿀팁</p>
+                        <p>{{recommend_blog.title}}</p>
                     </a>
-                    <p class="img1-2">삼성전자, sk하이닉스 등 대기업 9군데 최초합의 비결</p>
+                    <p class="img1-2">{{recommend_blog.one_line}}</p>
                     <div class="hashtags">
-                        <a class="hashtag" href="">#실무</a>
-                        <a class="hashtag" href="">#자소서</a>
+                        <a class="hashtag" href="">#{{recommend_blog.category}}</a>
                     </div>
                 </div>
-                <div class="like">
-                    <div class="img1"></div>
-                    <div class="heart">
-                        <a href="">
-                            <img src="{% static 'img/heart-nonpick.png' %}" alt="">
-                        </a>
-                    </div>
-                    </a>
-                    <a class="img1-1" href="">
-                        <p>한 번에 합격하는 자소서 꿀팁</p>
-                    </a>
-                    <p class="img1-2">삼성전자, sk하이닉스 등 대기업 9군데 최초합의 비결</p>
-                    <div class="hashtags">
-                        <a class="hashtag" href="">#실무</a>
-                        <a class="hashtag" href="">#자소서</a>
-                    </div>
-                </div>
-                <div class="like">
-                    <div class="img1"></div>
-                    <div class="heart">
-                        <a href="">
-                            <img src="{% static 'img/heart-nonpick.png' %}" alt="">
-                        </a>
-                    </div>
-                    </a>
-                    <a class="img1-1" href="">
-                        <p>한 번에 합격하는 자소서 꿀팁</p>
-                    </a>
-                    <p class="img1-2">삼성전자, sk하이닉스 등 대기업 9군데 최초합의 비결</p>
-                    <div class="hashtags">
-                        <a class="hashtag" href="">#실무</a>
-                        <a class="hashtag" href="">#자소서</a>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>

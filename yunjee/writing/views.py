@@ -6,13 +6,16 @@ from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
 def home(request):
-    blogs = Blog.objects
+    blogs = Blog.objects.all().order_by('-id')[:3]
+    recommend_blogs = Blog.objects.all().order_by('-like_num', '-pub_date')[:3]
+
     if request.user.is_authenticated:
         now_login = Account.objects.get(user=request.user)
-        return render(request, 'mainpage.html', {'blogs': blogs,'account' : now_login})#
+        return render(request, 'mainpage.html', {'blogs': blogs,'account' : now_login , 'recommend_blogs' : recommend_blogs})#
     else:
-        return render(request, 'mainpage.html', {'blogs': blogs})
+        return render(request, 'mainpage.html', {'blogs': blogs, 'recommend_blogs': recommend_blogs})
 
+@csrf_exempt
 def create(request, step):
     if request.method == 'POST':
         if step == 1:
@@ -24,6 +27,7 @@ def create(request, step):
             blog.money = request.POST['money']
             blog.one_line = request.POST['one_line']
             blog.page = request.POST['page']
+            blog.category = request.POST['category']
             if request.FILES:
                 blog.image = request.FILES['image']
             blog.save()
@@ -85,6 +89,8 @@ def delete(request):
 def blog_like(request, blog_id):
     blog = get_object_or_404(Blog, id = blog_id)
     user = request.user
+    if user.is_authenticated == 0:
+        return (redirect('/login'))
     account = Account.objects.get(user=user)
     check_like_blog= account.like_blog.filter(id=blog_id)
 
@@ -97,7 +103,7 @@ def blog_like(request, blog_id):
         blog.like_num += 1
         blog.save()
 
-    return redirect('detail', blog_id)
+    return redirect('/', blog_id)
 
 # 좋아요 순으로 내림차순 정렬
 

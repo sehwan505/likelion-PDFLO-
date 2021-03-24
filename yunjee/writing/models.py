@@ -8,6 +8,7 @@ class Blog(models.Model):
     money = models.CharField(max_length = 200)
     one_line = models.CharField(max_length = 200)
     page = models.IntegerField(default = 0)
+    category = models.CharField(default="실무", max_length=20)
     image = models.ImageField(null = True, blank = True, upload_to = 'image', default="image/elly.png")
     pub_date=models.DateTimeField(auto_now_add=True)
     seller = models.TextField()
