@@ -16,7 +16,11 @@
                 <p>금액 : {{blog.money}}</p>
                 <h5>한줄 요약 : {{blog.one_line}}</h5>
                 {% if blog.image %}
-                <img src="{{blog.image.url}}" alt="이미지가 없습니다." width="500" height="600">
+                <img src="{{blog.image.url}}" alt="이미지가 없습니다." width="200" height="150">
+                {% endif %}
+                {% if blog.preview %}
+                <h3>미리보기 : </h3>
+                <img src="{{blog.preview.url}}" alt="이미지가 없습니다." width="200" height="150">
                 {% endif %}
                 <h5>판매자 : {{blog.seller}}</h5>
                 <p>판매자의 한 마디 : {{blog.seller_comment}}</p>
@@ -31,6 +35,9 @@
                     {% endif %}
                 </a>
                 <div>좋아요 수 : {{blog.like_num}}</div>
+                {% if blog.filename %}
+                <a href="{% url 'download' blog.id %}">{{blog.filename}}</a>
+                {% endif %}
                 <br>
                 <input type="hidden" id="blogNum" name="blogNum" value="{{ blog.id }}">
                 <a href="{% url 'home' %}">돌아가기</a>

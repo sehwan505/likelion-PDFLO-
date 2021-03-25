@@ -36,6 +36,6 @@ urlpatterns = [
     path('profile/',login.views.profile, name="profile"),
     path('profile_update/',login.views.profile_update),
     path('review/', review.views.review, name = 'review'),
-    path('delete_review/<review_id>', review.views.delete_review, name='delete_review'),
-
-] + static(settings. MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('delete_review/<int:review_id>', review.views.delete_review, name='delete_review'),
+    path('download/<int:blog_id>', writing.views.file_download, name='download'),
+    ] + static(settings. MEDIA_URL, document_root=settings.MEDIA_ROOT)

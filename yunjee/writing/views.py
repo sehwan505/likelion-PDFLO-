@@ -3,7 +3,12 @@ from .models import Blog
 from review.models import Review
 from login.models import Account
 from django.views.decorators.csrf import csrf_exempt
+from django.utils.http import urlquote
+from django.http import HttpResponse
+import os
 # Create your views here.
+UPLOAD_DIR = "C:/Users/sehwa/what/yunjee/media/files"
+
 
 def home(request):
     blogs = Blog.objects.all().order_by('-id')[:3]
@@ -60,15 +65,43 @@ def create(request, step):
             blog.content_list = request.POST['content_list']
             blog.save()
             return render(request, 'inputpage_6.html', {'blog_id' : blog.id})
-        #elif step == 7:
-         #   blog = get_object_or_404(Blog, id=request.POST['id'])
-          #  blog.content_list = request.POST['content_list']
-           # blog.save()
+        elif step == 7:
             blog = get_object_or_404(Blog, id=request.POST['id'])
-            print(blog)
-        return redirect('/')
+            if request.FILES:
+                blog.preview = request.FILES['preview']
+                file_upload(blog, request)
+            return redirect('/')
     elif request.method == 'GET':
         return render(request, 'inputpage_1.html')
+
+def file_upload(blog ,request):
+    fname = ""
+    fsize = 0
+
+    if "file" in request.FILES:
+        file = request.FILES["file"]
+        print(file)
+        fname = file._name
+        print(UPLOAD_DIR + fname)
+        with open("%s%s" % (UPLOAD_DIR, fname), "wb") as fp:
+            for chunk in file.chunks():
+                fp.write(chunk)
+        fsize = os.path.getsize(UPLOAD_DIR + fname)
+        blog.filename = fname
+        blog.filesize = fsize
+        blog.save()
+
+def file_download(request, blog_id):
+    blog = Blog.objects.get(id=blog_id)
+    path = UPLOAD_DIR + blog.filename
+    filename = os.path.basename(path)
+    filename = urlquote(filename)
+    with open(path, "rb") as file:
+        response = HttpResponse(file.read(),
+                                content_type="application/octet-stream")
+        response["Content-Disposition"] = \
+            "attachment;filename*=UTF-8''{0}".format(filename)
+    return response
 
 def detail(request, blog_id):
     reviews = Review.objects.filter(blog=blog_id)
